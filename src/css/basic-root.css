@@ -1,0 +1,15 @@
+:root {
+  --color-accent: #7e8fdd;
+  --tab: #9cdfdf;
+  --white: #fdfdff;
+  --l-m-bg: #f8f9ff;
+  --l-m-dark: #242424;
+
+  --d-m-dark: #232330;
+  --d-m-bg: #1a1a1a;
+
+  --btn-h: #6e7fcf;
+
+  --t-dur: 250ms;
+  --t-tf: ease;
+}
