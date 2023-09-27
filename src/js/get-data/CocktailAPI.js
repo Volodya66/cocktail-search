@@ -1,4 +1,7 @@
 import axios from 'axios';
+import  error  from 'console';
+
+import defaultFirstMarkup from '../markup-implementation/randomCocktails'
 
 const BASE_URL = "https://drinkify.b.goit.study/api/v1";
 
@@ -16,7 +19,9 @@ if (widthWindowUser) {
     console.log(widthWindowUser)
     firstReqAPI(renderingCardDependency())
         .then(data => {
-    console.log("data", data)
+            console.log("data", data)
+            const markup = defaultFirstMarkup(data);
+            console.log(markup)
     })
   .catch(error => {
      console.error(error.message);
@@ -42,3 +47,9 @@ catch {
 
 
 export { renderingCardDependency };
+
+
+
+
+
+
