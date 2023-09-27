@@ -1,5 +1,5 @@
    export default function defaultFirstMarkup(arr) {
-    try {
+   
       
         return arr.map(({ _id, description, drink, drinkThumb }) => {
            
@@ -18,10 +18,6 @@
 </li>`
         }).join('');
 
-    }
-
-    catch {
-        console.log(error)
-    }
+    
 }
 

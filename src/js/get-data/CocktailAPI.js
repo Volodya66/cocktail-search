@@ -16,12 +16,12 @@ const BASE_URL = "https://drinkify.b.goit.study/api/v1";
     let widthWindowUser = document.documentElement.clientWidth;
 if (widthWindowUser) {
     // let requestCards = (widthWindowUser > 1280) ? 9 : 8;
-    console.log(widthWindowUser)
+    // console.log(widthWindowUser)
     firstReqAPI(renderingCardDependency())
         .then(data => {
             console.log("data", data)
             const markup = defaultFirstMarkup(data);
-            console.log(markup)
+            // console.log(markup)
     })
   .catch(error => {
      console.error(error.message);
