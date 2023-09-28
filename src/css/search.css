@@ -1,0 +1,6 @@
+.search-input {
+  width: 334px;
+  height: 44px;
+  border: 2px solid var(--color-accent);
+  border-radius: 80px;
+}
