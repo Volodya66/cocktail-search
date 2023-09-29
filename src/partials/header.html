@@ -1,5 +1,37 @@
 <header class="header">
-  <div class="container">
-    <load src="./mobile-menu.html" />
+  <div class="container header__container">
+    <div class="header__wrapper" id="header__wrapper" data-menu>
+      <nav class="nav">
+        <ul class="site-nav">
+          <li class="site-nav__item">
+            <a href="#" class="site-nav__link">Home</a>
+          </li>
+          <li class="site-nav__item nav-item-dropdown">
+            <a href="#" class="site-nav__link dropdown-trigger">Favorite</a>
+           
+          
+              <ul class="dropdown-menu">
+                <li class="dropdown-menu__item">
+                  <a href="#">Favorite cocktails</a>
+                </li>
+                <li class="dropdown-menu__item">
+                  <a href="#">Favorite ingredients</a>
+                </li>
+              </ul>
+           
+          </li>
+        </ul>
+      </nav>
+      <a class="logo" href="./index.html">DRINKIFY<svg class="icon">
+          <use href="../img/sprite.svg#icon-cocktail"></use>
+        </svg>
+      </a>
+    </div>
+    <button type="button" class="menu" aria-expanded="false" aria-controls="header__wrapper" data-menu-button>
+      <svg class="menu__button--icon" width="40px" height="40px" aria-label="Переключатель мобильного меню">
+        <use class="menu__close" href="../img/sprite.svg#icon-close"></use>
+        <use class="menu__burger" href="../img/sprite.svg#icon-burger"></use>
+      </svg>
+    </button>
   </div>
 </header>
