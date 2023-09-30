@@ -11,7 +11,7 @@ const BASE_URL = "https://drinkify.b.goit.study/api/v1";
     return requestCards
 };
 
- function getRequest() {
+ function getRequestRandomCocktails() {
     // ? вираховуємо ширину в*юпорта користувача 
     let widthWindowUser = document.documentElement.clientWidth;
 if (widthWindowUser) {
@@ -27,8 +27,12 @@ if (widthWindowUser) {
 };
 }
 
-getRequest();
+getRequestRandomCocktails();
  
+// const arrayRandomCocktails = await getRequestRandomCocktails();
+
+
+
 
 async function firstReqAPI(param) {
 try { 
