@@ -22,25 +22,8 @@ function getCocktailsBySearch(search) {
     .catch(error => {
       console.log(error.status);
     });
-
-  // const response = await fetch(
-  //   `https://drinkify.b.goit.study/api/v1/cocktails/search/?${search}`
-  // );
-  // if (!response.ok) {
-  //   if (response.status === 404) {
-  //     console.log('render not found element');
-  //   }
-  //   throw new Error(response.status);
-  // }
-  // return response.json();
-  // // .then(response => {
-  // //
-  // //   return response.json();
-  // // })
-  // // .catch(error => {
-  // //   console.log(error.status);
-  // // });
 }
+
 cocktailsArray = await getCocktailsBySearch('a');
 const coctailsRef = document.querySelector('#cocktails');
 paginationElement(cocktailsArray, coctailsRef);
