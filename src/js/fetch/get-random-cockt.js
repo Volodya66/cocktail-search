@@ -1,7 +1,7 @@
 // реалізувати запит на сервер за рандомними коктейлями. Викликати функцію з файлу render-coctails-card.js та передати туди масив та контейнер
 
 import axios from 'axios';
-import  error  from 'console';
+
 
 const BASE_URL = "https://drinkify.b.goit.study/api/v1";
 
@@ -16,9 +16,9 @@ const BASE_URL = "https://drinkify.b.goit.study/api/v1";
     let widthWindowUser = document.documentElement.clientWidth;
 if (widthWindowUser) {
     
-    firstReqAPI(renderingCardDependency())
+   return firstReqAPI(renderingCardDependency())
         .then(data => {
-            // console.log("data", data)
+            console.log("data", data)
             return data;
     })
   .catch(error => {
