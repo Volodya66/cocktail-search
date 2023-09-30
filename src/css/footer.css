@@ -38,6 +38,12 @@
   gap: 4px;
 }
 
+@media only screen and (min-width: 767.9px) {
+  .footer-link {
+    gap: 8px;
+  }
+}
+
 .footer-logo {
   color: var(--white);
   font-size: 16px;
