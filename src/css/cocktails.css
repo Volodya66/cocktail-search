@@ -1,0 +1,128 @@
+.search__form{
+    margin-bottom: 40px;
+}
+.search__title{
+    margin-bottom: 40px;
+}
+@media screen and (min-width:768px) {
+    .cocktails__list{
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 32px;
+        column-gap: 16px;
+    }
+    }
+    @media screen and (min-width:1280px) {
+        .cocktails__list{
+            row-gap: 44px;
+            column-gap: 24px;
+        }
+        }
+    
+
+.cocktails__item{
+    padding: 14px 14px 14px 20px;
+    }
+    .cocktails__item :not(:last-child){
+        margin-bottom: 20px;
+        }
+    
+   
+@media screen and (min-width:768px) {
+    .cocktails__item{
+        padding-bottom: 24px;
+
+        margin-bottom: 0;
+
+        width:calc((100% - 2 * 16px) / 3);
+
+    }
+}
+
+@media screen and (min-width:1280px) {
+    .cocktails__item{
+
+        width:calc((100% - 2 * 16px) / 4);
+}
+}
+
+
+.cocktails__item__img{
+width: 100%;
+height: 257px;
+margin-bottom: 20px;
+border-radius: 16px;
+}
+
+.cocktails__item__header{
+    margin-bottom: 14px;
+
+   
+}
+
+.cocktails__item__description{
+    max-width: 296px;
+    margin: 0; 
+    -webkit-line-clamp: 3; 
+    display: -webkit-box; 
+    -webkit-box-orient: vertical; 
+    overflow: hidden; 
+
+}
+
+
+.cocktails__btn__container{
+    height: 48px;
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    gap: 15px;
+
+  
+}
+.learnmore__btn{
+    width: 232px;
+    height: 48px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    border: 1px solid #7E8FDD;
+    color: #242424;
+font-family: Poppins;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px;
+letter-spacing: 0.28px;
+text-transform: uppercase;
+}
+.svg__btn{
+    width: 48px;
+    height: 48px;
+padding: 0;
+border: transparent;
+border-radius: 12px;
+background: #7E8FDD;
+}
+.svg-heart{
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cocktails__svg{
+    
+    width: 18px;
+    height: 18px;
+
+}
+.add_favorites_js{
+    fill:transparent
+
+}
+.remove_favorites_js{
+    fill: #FDFDFF; 
+}
