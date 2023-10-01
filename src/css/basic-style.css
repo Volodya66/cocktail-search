@@ -4,10 +4,11 @@ body {
   font-size: 14px;
   background-image: url('../img/body-bg/background.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
   color: var(--l-m-dark);
 }
-body.dark {
+/* dark mode style+++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+body.dark-mode {
   background-image: url('../img/body-bg/background-dark.jpg');
   color: var(--white);
 }

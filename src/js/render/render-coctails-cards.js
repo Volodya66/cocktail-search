@@ -7,28 +7,29 @@
 // if(query.length===1){
 //     return fetch(`${BASE_URL}?f=${query}`)
 //     .then(response => {
-//       return response.json(); 
+//       return response.json();
 //     })
 // }
 //     return fetch(`${BASE_URL}?s=${query}`)
 //       .then(response => {
-//         return response.json(); 
+//         return response.json();
 //       })
 //       .catch(error => {
 //         throw new Error;
 //       });
 //   }
-    
+
 // const searchForm = document.querySelector('.search__form');
 const cocktailsList = document.querySelector('.cocktails__list');
 const titleRemove = document.querySelector('.search__title');
 const learnMoreBtn = document.querySelectorAll('.learnmore__btn');
 const svg = document.querySelectorAll('.cocktails__svg');
 
-const itemBtnContainer = document.querySelectorAll('.cocktails__btn__container');
+const itemBtnContainer = document.querySelectorAll(
+  '.cocktails__btn__container'
+);
 
 titleRemove.style.display = 'none';
-
 
 // searchForm.addEventListener('submit', createImgCards);
 
@@ -54,9 +55,11 @@ titleRemove.style.display = 'none';
 // }
 // }
 
-function renderCocktailsList(images) {
-cocktailsList.innerHTML += images.map(image => `
-<li class="cocktails__item" id = ${image._id}>
+export function renderCocktailsList(images, container) {
+  container.innerHTML += images
+    .map(
+      image => `
+<li class="cocktails__item change-theme" id = ${image._id}>
 <img class="cocktails__item__img" src=${image.drinkThumb} alt=${image.drink}>
 <h3 class="cocktails__item__header">${image.drink}</h3>
 <p class="cocktails__item__description">${image.description}</p>
@@ -69,35 +72,33 @@ cocktailsList.innerHTML += images.map(image => `
 </button>
 </div> 
 </li>
-`)
-.join('');
-
+`
+    )
+    .join('');
 }
 function renderingCardDependency() {
   let widthWindowUser = document.documentElement.clientWidth;
-  let requestCards = (widthWindowUser > 1280) ? 9 : 8;
-  return requestCards
-};
-
-
-function clearCocktailsList(){
-cocktailsList.innerHTML = '';
+  let requestCards = widthWindowUser > 1280 ? 9 : 8;
+  return requestCards;
 }
 
-function changeEvents(event){
-    const target = event.target;
-    if (target.classList.contains('learnmore__btn')) {
-    console.log("Open modal");
+function clearCocktailsList() {
+  cocktailsList.innerHTML = '';
+}
 
+function changeEvents(event) {
+  const target = event.target;
+  if (target.classList.contains('learnmore__btn')) {
+    console.log('Open modal');
   } else if (target.classList.contains('svg__btn')) {
     addToFavorites();
-    if(addToFavorites){
-svg.classList.remove('.add_favorites_js');
-svg.classList.add('.remove_favorites_js');
-
+    if (addToFavorites) {
+      svg.classList.remove('.add_favorites_js');
+      svg.classList.add('.remove_favorites_js');
     }
-    console.log("Add to favorites");
-  }}
+    console.log('Add to favorites');
+  }
+}
 
 function getFavorites() {
   const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -110,16 +111,17 @@ function saveFavorites(favorites) {
 function addToFavorites(event) {
   const card = event.target.parentElement;
   const cocktailData = {
-    id:card.querySelector('#id').textContent,
+    id: card.querySelector('#id').textContent,
     name: card.querySelector('.cocktails__item__header').textContent,
-    description: card.querySelector('.cocktails__item__description').textContent,
+    description: card.querySelector('.cocktails__item__description')
+      .textContent,
     imageSrc: card.querySelector('.cocktails__item__img').src,
   };
 
   const favorites = getFavorites();
 
   if (!favorites.includes(cocktailData)) {
-      favorites.push(cocktailData);
+    favorites.push(cocktailData);
   }
   saveFavorites(favorites);
 }

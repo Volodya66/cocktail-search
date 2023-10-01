@@ -1,3 +1,6 @@
+.search {
+  padding-top: 100px;
+}
 .search-input {
   display: block;
   width: 334px;
@@ -25,10 +28,11 @@
 }
 
 .container-letters {
-  width: 904px;
+  max-width: 904px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin: 0 auto;
   margin-bottom: 40px;
   row-gap: 16px;
   column-gap: 8px;
