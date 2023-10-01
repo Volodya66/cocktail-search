@@ -1,23 +1,23 @@
 // написати функцію яка буде відмальовувати картки коктейлів. З файла user-screen-width-follower.js взяти кількість карток, які необхідно намалювати, відповідно до ширини екрану. В параметри функції буде приходити масив з об'єктами коктейлів та посилання на елемент в якому ці картки необхідно намалювати. Зробити іменований експорт цієї функції, для її перевикористання. у разі якщо довжина масиву більша за число карток, які можна намалювати, відповідно до ширини екрану, викликати функцію пагінації.Картки мають бути тегами li, тому що малюватись вони будуть в тезі ul
-let query ='';
+// let query ='';
 
-const BASE_URL = 'https://drinkify.b.goit.study/api/v1/cocktails/search/';
+// const BASE_URL = 'https://drinkify.b.goit.study/api/v1/cocktails/search/';
 
-function fetchImage() {
-if(query.length===1){
-    return fetch(`${BASE_URL}?f=${query}`)
-    .then(response => {
-      return response.json(); 
-    })
-}
-    return fetch(`${BASE_URL}?s=${query}`)
-      .then(response => {
-        return response.json(); 
-      })
-      .catch(error => {
-        throw new Error;
-      });
-  }
+// function fetchImage() {
+// if(query.length===1){
+//     return fetch(`${BASE_URL}?f=${query}`)
+//     .then(response => {
+//       return response.json(); 
+//     })
+// }
+//     return fetch(`${BASE_URL}?s=${query}`)
+//       .then(response => {
+//         return response.json(); 
+//       })
+//       .catch(error => {
+//         throw new Error;
+//       });
+//   }
     
 const searchForm = document.querySelector('.search__form');
 const cocktailsList = document.querySelector('.cocktails__list');
@@ -30,29 +30,29 @@ const itemBtnContainer = document.querySelectorAll('.cocktails__btn__container')
 titleRemove.style.display = 'none';
 
 
-searchForm.addEventListener('submit', createImgCards);
+// searchForm.addEventListener('submit', createImgCards);
 
-if (itemBtnContainer) {
-  itemBtnContainer.forEach(button => {
-  button.addEventListener('click', changeEvents);
-})};
+// if (itemBtnContainer) {
+//   itemBtnContainer.forEach(button => {
+//   button.addEventListener('click', changeEvents);
+// })};
 
-async function createImgCards(event) {
-event.preventDefault();
-query = event.currentTarget.elements.query.value.trim();
+// async function createImgCards(event) {
+// event.preventDefault();
+// query = event.currentTarget.elements.query.value.trim();
 
-clearCocktailsList();
+// clearCocktailsList();
 
-try {
-const data = await fetchImage();
-data.length = renderingCardDependency();
-titleRemove.style.display = 'block';
-renderCocktailsList(data);
-}
-catch (error) {
-console.log(error.message);
-}
-}
+// try {
+// const data = await fetchImage();
+// data.length = renderingCardDependency();
+// titleRemove.style.display = 'block';
+// renderCocktailsList(data);
+// }
+// catch (error) {
+// console.log(error.message);
+// }
+// }
 
 function renderCocktailsList(images) {
 cocktailsList.innerHTML += images.map(image => `
