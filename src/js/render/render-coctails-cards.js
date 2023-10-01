@@ -19,7 +19,7 @@
 //       });
 //   }
     
-const searchForm = document.querySelector('.search__form');
+// const searchForm = document.querySelector('.search__form');
 const cocktailsList = document.querySelector('.cocktails__list');
 const titleRemove = document.querySelector('.search__title');
 const learnMoreBtn = document.querySelectorAll('.learnmore__btn');
