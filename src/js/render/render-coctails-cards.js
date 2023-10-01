@@ -64,7 +64,7 @@ cocktailsList.innerHTML += images.map(image => `
 <button type="button" class="learnmore__btn">learn more</button>
 <button type="button"  class="svg__btn"> 
  <svg class="svg-heart">
-<use class="cocktails__svg addFavorites_js" href="./img/sprite.svg#icon-heart"></use>
+<use class="cocktails__svg add_favorites_js" href="./img/sprite.svg#icon-heart"></use>
 </svg>
 </button>
 </div> 
@@ -110,6 +110,7 @@ function saveFavorites(favorites) {
 function addToFavorites(event) {
   const card = event.target.parentElement;
   const cocktailData = {
+    id:card.querySelector('#id').textContent,
     name: card.querySelector('.cocktails__item__header').textContent,
     description: card.querySelector('.cocktails__item__description').textContent,
     imageSrc: card.querySelector('.cocktails__item__img').src,
