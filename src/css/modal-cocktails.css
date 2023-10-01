@@ -1,0 +1,126 @@
+.modal-cocktails {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(21, 21, 21, 0.6);
+}
+
+.wrapper-modal-cocktails {
+  position: fixed;
+  z-index: 999;
+
+  padding: 40px 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--l-m-bg);
+  border-radius: 20px;
+  overflow-y: auto;
+  height: 905px;
+  width: 335px;
+}
+
+.close-modal-cocktails {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  border: none;
+  background-color: var(--l-m-bg);
+  stroke: var(--l-m-dark);
+}
+
+.modal-cocktails-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+}
+.modal-cocktails-info-part-title {
+  font-family: 'Poppins';
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  color: var(--l-m-dark);
+}
+.modal-cocktails-info-part-undotitle {
+  font-family: 'Poppins';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #24242480;
+
+  margin-top: 8px;
+}
+.modal-cocktails-info-part-1-list {
+  list-style: inside;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+
+  font-family: 'Poppins';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #242424cc;
+
+  margin-top: 20px;
+}
+.modal-cocktails-info-part-2-text {
+  font-family: 'Poppins';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #24242480;
+
+  margin-top: 14px;
+}
+
+.modal-cocktails-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.modal-button {
+  width: 100%;
+  height: 48px;
+  padding: 14px;
+
+  font-family: 'Poppins';
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+
+  border: none;
+  border-radius: 12px;
+  transition: backgroun-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-button-favorite {
+  color: var(--white);
+  background-color: var(--color-accent);
+}
+.modal-button-favorite:hover,
+.modal-button-favorite:focus {
+  background-color: var(--btn-h);
+}
+.modal-button-back {
+  color: var(--l-m-dark);
+  background-color: #2424241a;
+}
+.modal-button-back:hover,
+.modal-button-back:focus {
+  background-color: #24242433;
+}
