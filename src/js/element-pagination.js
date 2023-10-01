@@ -1,47 +1,56 @@
 // реалізувати функцію пагінації масива, який передається при виклику функції. також в параметри передати контейнер в якому будуть картки для пагінації
-let cocktailsArray = [];
+import getCocktailsBySearch from './fetch/get-cocktails-by-search';
+import { renderingCardDependency } from './fetch/get-random-cockt';
 
-function renderingCardDependency() {
-  let widthWindowUser = document.documentElement.clientWidth;
-  let requestCards = widthWindowUser > 1280 ? 9 : 8;
-  return requestCards;
-}
-function getCocktailsBySearch(search) {
-  return fetch(
-    `https://drinkify.b.goit.study/api/v1/cocktails/search/?${search}`
-  )
-    .then(response => {
-      if (!response.ok) {
-        if (response.status === 404) {
-          console.log('render not found element');
-        }
-        throw new Error(response.status);
-      }
-      return response.json();
-    })
-    .catch(error => {
-      console.log(error.status);
-    });
-}
+const perPageCards = renderingCardDependency();
+const cocktailsRef = document.querySelector('#cocktails');
+const paginationRef = document.querySelector('#pagination-elements');
+let cocktailsArray = await getCocktailsBySearch('a');
 
-cocktailsArray = await getCocktailsBySearch('a');
-const coctailsRef = document.querySelector('#cocktails');
-paginationElement(cocktailsArray, coctailsRef);
+export let arrayOfArrays = [];
+// console.log(cocktailsArray);
 
-function paginationElement(array, container) {
-  const perPageCards = renderingCardDependency();
-  console.log(array);
-  let arrayOfArrays = [];
+export function paginationElement(
+  array,
+  containerPagination,
+  containerCocktails
+) {
   let counter = 1;
 
-  for (counter = 0; counter < array.length / perPageCards; counter += 1) {
+  for (
+    counter = 0;
+    counter < Math.ceil(array.length / perPageCards);
+    counter += 1
+  ) {
     const perPageArray = array.slice(
       counter * perPageCards,
       (counter + 1) * perPageCards
     );
     arrayOfArrays.push(perPageArray);
   }
-  console.log(arrayOfArrays);
-  // console.log(perPageCards);
-  // console.log(array, container);
+  renderPaginationNumbers(
+    arrayOfArrays,
+    containerPagination,
+    containerCocktails
+  );
+}
+function onPaginationBtnClick(e) {
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+
+  console.log(`Маємо намалювать ${e.target.textContent} сторінку`);
+  console.log(arrayOfArrays[e.target.textContent - 1]);
+}
+function renderPaginationNumbers(arrayOfArrays, paginationRef, cocktailsRef) {
+  const markup = [];
+  for (let i = 0; i <= arrayOfArrays.length - 1; i += 1) {
+    markup.push(
+      `<button class="js-pagination-btn" type="button" id="js-pagination-btn">${
+        i + 1
+      }</button>`
+    );
+  }
+  paginationRef.innerHTML = markup.join('');
+  paginationRef.addEventListener('click', onPaginationBtnClick);
 }
