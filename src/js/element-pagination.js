@@ -3,9 +3,9 @@ import getCocktailsBySearch from './fetch/get-cocktails-by-search';
 import { renderingCardDependency } from './fetch/get-random-cockt';
 
 const perPageCards = renderingCardDependency();
-const cocktailsRef = document.querySelector('#cocktails');
-const paginationRef = document.querySelector('#pagination-elements');
-let cocktailsArray = await getCocktailsBySearch('a');
+// const cocktailsRef = document.querySelector('#cocktails');
+// const paginationRef = document.querySelector('#pagination-elements');
+// let cocktailsArray = await getCocktailsBySearch('a');
 
 export let arrayOfArrays = [];
 // console.log(cocktailsArray);
