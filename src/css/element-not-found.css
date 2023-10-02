@@ -1,4 +1,78 @@
-/* картки "нема фаворит коктейлів і фаворит інгредієнтів" */
+/* вставка в сторінку "not founds" */
+
+.no_res_cent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.no_res_img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.no_res_text {
+  font-family: Poppins;
+  margin-block-end: 0px;
+  margin-block-start: 0px;
+  padding-top: 40px;
+  color: var(--l-m-dark);
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+}
+.no_res_fc {
+  font-family: Poppins;
+  color: var(--tab);
+  font-style: italic;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 767px) {
+  .no_res_cent {
+    padding-top: 40px;
+    padding-bottom: 100px;
+    width: 244px;
+    height: 189px;
+  }
+  .no_res_img {
+    width: 142px;
+    height: 122px;
+  }
+  .no_res_text,
+  .no_res_fc {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .no_res_cent {
+    padding-top: 50px;
+    width: 370px;
+    height: 297px;
+  }
+  .no_res_img {
+    width: 234px;
+    height: 201px;
+  }
+  .no_res_text,
+  .no_res_fc {
+    font-size: 24px;
+    line-height: 1.17;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .no_res_cent {
+    padding-bottom: 150px;
+  }
+}
+
+/* 2 різні картки "нема фаворит коктейлів і фаворит інгредієнтів" */
 
 .no_result_container {
   margin-left: auto;
@@ -9,7 +83,6 @@
   margin-block-end: 0px;
   margin-block-start: 0px;
   color: var(--l-m-dark);
-  font-family: Poppins;
   font-style: normal;
   font-weight: 500;
 }
@@ -33,7 +106,6 @@
   padding-top: 40px;
   color: var(--l-m-dark);
   text-align: center;
-  font-family: Poppins;
   font-style: normal;
   font-weight: 400;
 }
