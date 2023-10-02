@@ -5,7 +5,7 @@ import { renderCocktailsList } from '../render/render-coctails-cards';
 
 const BASE_URL = 'https://drinkify.b.goit.study/api/v1';
 
-function renderingCardDependency() {
+export function renderingCardDependency() {
   let widthWindowUser = document.documentElement.clientWidth;
   let requestCards = widthWindowUser > 1280 ? 9 : 8;
   return requestCards;
@@ -38,5 +38,3 @@ async function firstReqAPI(param) {
     console.error(error.message);
   }
 }
-
-export { renderingCardDependency };

@@ -29,7 +29,7 @@ const itemBtnContainer = document.querySelectorAll(
   '.cocktails__btn__container'
 );
 
-titleRemove.style.display = 'none';
+// titleRemove.style.display = 'none';
 
 // searchForm.addEventListener('submit', createImgCards);
 
@@ -56,11 +56,11 @@ titleRemove.style.display = 'none';
 // }
 
 export function renderCocktailsList(images, container) {
-  container.innerHTML += images
+  container.innerHTML = images
     .map(
       image => `
 <li class="cocktails__item change-theme" id = ${image._id}>
-<img class="cocktails__item__img" src=${image.drinkThumb} alt=${image.drink}>
+<img class="cocktails__item__img" loading="lazy" src=${image.drinkThumb} alt=${image.drink}>
 <h3 class="cocktails__item__header">${image.drink}</h3>
 <p class="cocktails__item__description">${image.description}</p>
 <div class="cocktails__btn__container">
