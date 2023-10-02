@@ -21,8 +21,7 @@ function addListenerToLearnMoreBtn(containerUlRef) {
   containerUlRef.addEventListener('click', onCocktailCardItemBtnClick);
 }
 
-addListenerToLearnMoreBtn(cocktailsList)
-
+addListenerToLearnMoreBtn(cocktailsList);
 
 // modalOpenButtons.forEach(button => {
 // button.addEventListener('click', () => {
@@ -68,9 +67,16 @@ async function firstReqAPIModal(id) {
 }
 
 function renderCocktailModal(images, container) {
+  const ingredientsArr = [];
+  const ingredientsId = [];
   images[0].ingredients.forEach(element => {
-    console.log(element.title+' '+element.measure)
+    if (element.measure === undefined) {
+      element.measure = '';
+    }
+    ingredientsArr.push(element.measure + ' ' + element.title);
+    ingredientsId.push(element.ingredientId);
   });
+  console.log(ingredientsArr);
   container.innerHTML = images
     .map(
       image => `
@@ -90,7 +96,7 @@ function renderCocktailModal(images, container) {
             <h2 class="modal-cocktails-card-title">${image.drink}</h2>
             <h2 class="modal-cocktails-info-part-title">INGREDIENTS:</h2>
             <p class="modal-cocktails-info-part-undotitle">Per cocktail</p>
-            <ul class="modal-cocktails-info-part-1-list">
+            <ul class="modal-cocktails-info-part-1-list list-cocktail-ingredients">
             </ul>
           </li>
         </ul>
@@ -102,4 +108,13 @@ function renderCocktailModal(images, container) {
       `
     )
     .join('');
+  const ingredientsList = document.querySelector(
+    '.modal-cocktails-info-part-1-list'
+  );
+  for (let i = 0; i < ingredientsArr.length; i++) {
+    ingredientsList.insertAdjacentHTML(
+      'afterbegin',
+      `<li class="list-cocktail-ingredients-item" id=${ingredientsId[i]}>${ingredientsArr[i]}</li>`
+    );
+  }
 }
