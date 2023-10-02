@@ -102,6 +102,12 @@
   letter-spacing: 0.28px;
   text-transform: uppercase;
   background-color: transparent;
+  transition: background-color var(--t-dur) var(--t-tf),
+    color var(--t-dur) var(--t-tf);
+}
+.learnmore__btn:hover {
+  background-color: var(--color-accent);
+  color: var(--white);
 }
 .svg__btn {
   display: block;

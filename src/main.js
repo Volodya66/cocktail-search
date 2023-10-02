@@ -1,4 +1,5 @@
 import './js/mobile-menu';
+import './js/scroll';
 import './js/theme-changer';
 import './js/render/render-search-letters';
 import './js/cocktails';
