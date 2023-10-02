@@ -1,9 +1,8 @@
-// реалізувати відкриття та закриття модалки.  функцію відмалювання розмітки модального вікна коктеля, з файлів element-add-to-local-storage.js та element-remove-from-local-storage імпортувати функції для додавання та видалення елементів local storage для додавання та видалення з улюбленого
 import axios from 'axios';
 // import { renderCocktailModal } from '../render/render-coctails-cards';
 
 const BASE_URL = 'https://drinkify.b.goit.study/api/v1';
-const modalOpenButtons = document.querySelectorAll('[data-modal-open]');
+// const modalOpenButtons = document.querySelectorAll('[data-modal-open]');
 const modalCloseButtons = document.querySelectorAll('[data-modal-close]');
 const cocktailsList = document.querySelector('.cocktails__list');
 
@@ -12,22 +11,27 @@ function addListenerToLearnMoreBtn(containerUlRef) {
     if (e.target.nodeName !== 'BUTTON' || !e.target.dataset.id) {
       return;
     }
-    console.log(e.target.dataset.id);
+    const modalId = e.target.dataset.modalOpen;
+    const modalCardId = e.target.dataset.id;
+    const modal = document.getElementById(modalId);
+    console.log(modalId);
+    openModal(modal, modalCardId);
     //тут далі можеш свою логіку запиту писати то шо поверне e.target.dataset.id буде айдішніком тої картки, на яку нажали лерн мор
   }
   containerUlRef.addEventListener('click', onCocktailCardItemBtnClick);
 }
+
 addListenerToLearnMoreBtn(cocktailsList)
 
 
-modalOpenButtons.forEach(button => {
-button.addEventListener('click', () => {
-  const modalId = button.dataset.modalOpen;
-  const modalCardId = button.id;
-  const modal = document.getElementById(modalId);
-  openModal(modal, modalCardId);
-  });
-});
+// modalOpenButtons.forEach(button => {
+// button.addEventListener('click', () => {
+//   const modalId = button.dataset.modalOpen;
+//   const modalCardId = button.dataset.id;
+//   const modal = document.getElementById(modalId);
+//   openModal(modal, modalCardId);
+//   });
+// });
 
 modalCloseButtons.forEach(button => {
   button.addEventListener('click', () => {
@@ -35,7 +39,6 @@ modalCloseButtons.forEach(button => {
     closeModal(modal);
   });
 });
-
 function openModal(modal, modalId) {
   modal.classList.remove('is-hidden');
   getRequestModalCocktail(modalId);

@@ -46,6 +46,11 @@
   justify-content: center;
   gap: 40px;
 }
+.modal-cocktails-img {
+  width: 295px;
+  height: 277px;
+  border-radius: 16px;
+}
 .modal-cocktails-card-title {
   display: none;
 }
@@ -147,6 +152,10 @@
     justify-content: left;
     gap: 20px;
   }
+  .modal-cocktails-img {
+    width: 288px;
+  }
+
   .modal-cocktails-card-title {
     display: block;
     font-family: 'Poppins';
