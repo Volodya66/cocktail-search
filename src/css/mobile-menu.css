@@ -1,0 +1,272 @@
+/* ЦЕ СТИЛІ ДЛЯ ПЕРЕМИКАЧА ТА БУРГЕРА
+ЇХ ТРЕБА БУДЕ ЗАБРАТИ */
+
+.xxxxxxxxxxxxxxx {
+  display: flex;
+  justify-content: center;
+  width: 50px;
+  height: 32px;
+  border: black;
+}
+
+.aaaaaaaaaaa {
+  width: 50px;
+  height: 32px;
+}
+
+.burger-button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  line-height: 0;
+  cursor: pointer;
+  transform: scale(1);
+  stroke: black;
+  transition: var(--transition-transform), var(--transition-stroke);
+}
+
+.burger-svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* styles */
+
+.backdrop-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-accent);
+  /* transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+}
+
+.head-mobile-div {
+  display: flex;
+  padding-top: 20px;
+  justify-content: space-between;
+}
+
+.bbb {
+  display: flex;
+}
+
+.mobile-menu-logo {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+}
+
+a.mobile-menu-logo {
+  gap: 4px;
+}
+
+.mobile-menu-icon {
+  width: 21px;
+  height: 18px;
+  fill: var(--tab);
+}
+
+.head-menu-close {
+  width: 32px;
+  height: 32px;
+  padding-left: 0;
+  padding-right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+}
+
+.mobile-menu-buttons {
+  display: flex;
+  gap: 18px;
+}
+
+.head-menu-close-button {
+  stroke: var(--white);
+  width: 32px;
+  height: 32px;
+  /* transform: scale(1); */
+  /* transition: var(--transition-transform), var(--transition-stroke); */
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+  /* display: flex; */
+  text-align: center;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  color: var(--white);
+  padding-top: 14px;
+  /* border: none;
+  outline: none;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0; */
+}
+
+a.dropbtn {
+  gap: 4px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 312px;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  min-width: 144px;
+  height: 18px;
+  text-align: center;
+  /* z-index: 1; */
+}
+
+.dropdown-menu-links {
+  display: flex;
+  float: none;
+  color: rgba(253, 253, 255, 0.5);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.28px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.dropdown-menu-links a {
+  display: flex;
+  justify-content: center;
+  float: none;
+}
+
+.show {
+  display: block;
+}
+
+.header-mobile-menu {
+  display: flex;
+  flex-direction: column;
+  padding-top: 180px;
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.36px;
+}
+
+.dropdown-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.head-menu-list {
+  text-align: center;
+}
+
+/* .head-menu-item {
+  color: white;
+} */
+
+.dropdown-trigger {
+  position: relative;
+  /* display: flex; */
+}
+
+.dropbtn-div {
+  display: flex;
+  justify-content: center;
+  /* text-align: center; */
+}
+
+.dropbtn-div a {
+  display: flex;
+  align-items: center;
+}
+
+.icon-chevron-down {
+  /* fill: #7e8fdd; */
+  stroke: var(--white);
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.icon-star {
+  display: none;
+  /* position: absolute; */
+}
+
+@media screen and (min-width: 768px) {
+  .head-mobile-div {
+    padding-top: 24px;
+  }
+
+  .mobile-menu-logo {
+    font-size: 22px;
+    line-height: 24px;
+  }
+
+  a.mobile-menu-logo {
+    gap: 8px;
+  }
+
+  .mobile-menu-icon {
+    width: 29px;
+    height: 25px;
+  }
+
+  .mobile-menu-buttons {
+    gap: 24px;
+  }
+
+  .head-menu-close {
+    width: 40px;
+    height: 40px;
+  }
+
+  .head-menu-close-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .xxxxxxxxxxxxxxx {
+    width: 64px;
+    height: 40px;
+    /* border-width: 2px; */
+  }
+
+  .header-mobile-menu {
+    padding-top: 251px;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.48px;
+  }
+
+  .dropdown-content {
+    top: 411px;
+  }
+
+  .icon-star {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    opacity: 0.2;
+    display: inline-flex;
+  }
+}
