@@ -9,7 +9,7 @@ export function renderCocktailsList(images, container) {
 <h3 class="cocktails__item__header">${image.drink}</h3>
 <p class="cocktails__item__description">${image.description}</p>
 <div class="cocktails__btn__container">
-<button type="button" class="learnmore__btn" data-id="${image._id}">learn more</button>
+<button type="button" class="learnmore__btn"  data-modal-open="modal-cocktails" data-id="${image._id}">learn more</button>
 <button type="button"  class="svg__btn"> 
  <svg class="svg-heart">
 <use class="cocktails__svg add_favorites_js" href="img/sprite.svg#icon-heart"></use>
