@@ -1,24 +1,25 @@
 .basicLightbox {
-    background: #fafafa00;
+  background: #fafafa00 !important;
 }
 .basicLightbox.dark-mode {
-    background: #000c;
+  background: #000c !important;
 }
-.modal {
+.modal-ingredients {
   overflow-y: scroll;
   border-radius: 15px;
   background-color: var(--l-m-dark);
-  color: #fdfdff;
+  color: var(--white);
   /* height: 95%;
     max-height: 1000px; */
   padding: 24px;
   width: 330px;
   height: 330px;
 }
-.modal.dark-mode {
-    background-color: #fdfdff;
-    color: #242424;
+.modal-ingredients.dark-mode {
+  background-color: var(--white) ;
+  color: var(--l-m-dark);
 }
+
 @media screen and (min-width: 768px) {
   .favor-ingred__gallery {
     display: flex;
@@ -29,7 +30,7 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .favor-ingred__gallery {
     column-gap: 24px;
     row-gap: 44px;
@@ -37,10 +38,9 @@
 }
 
 .favor-ingred__title {
-  color: #242424;
+  color: var(--l-m-dark);
   font-family: Poppins;
   font-size: 24px;
-  font-style: normal;
   font-weight: 500;
   line-height: 1.17;
 
@@ -48,7 +48,7 @@
 }
 
 .favor-ingred__title.dark-mode {
-  color: #fdfdff;
+  color: var(--white);
 }
 
 @media screen and (min-width: 768px) {
@@ -60,7 +60,7 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .favor-ingred__title {
     margin-bottom: 44px;
   }
@@ -70,12 +70,12 @@
   width: 335px;
   padding: 20px;
   border-radius: 20px;
-  background: #fdfdff;
+  background: var(--white);
   box-shadow: 0px 4px 46px 0px rgba(0, 0, 0, 0.05);
 }
 
 .favor-ingred__card-item.dark-mode {
-  background: #232330;
+  background: var(--d-m-dark);
 }
 
 .favor-ingred__card-item:not(:last-child) {
@@ -94,7 +94,7 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .favor-ingred__card-item {
     width: 344px;
     flex-basis: calc((100% - 48px) / 3);
@@ -102,10 +102,9 @@
 }
 
 .favor-ingred__title-name {
-  color: #242424;
+  color: var(--l-m-dark);
   font-family: Poppins;
   font-size: 18px;
-  font-style: normal;
   font-weight: 600;
   line-height: 1.33;
 
@@ -113,7 +112,7 @@
 }
 
 .favor-ingred__title-name.dark-mode {
-  color: #fdfdff;
+  color: var(--white);
 }
 
 @media screen and (min-width: 768px) {
@@ -126,9 +125,6 @@
 .favor-ingred__text-alco {
   color: rgba(36, 36, 36, 0.5);
   font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
   line-height: 1.28;
 
   margin-bottom: 14px;
@@ -144,20 +140,17 @@
   /* flex-shrink: 0; */
 
   overflow: hidden;
-  color: #242424;
+  color: var(--l-m-dark);
   text-overflow: ellipsis;
   whitespace: nowrap;
   font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
   line-height: 1.28;
 
   margin-bottom: 20px;
 }
 
 .favor-ingred__text-descr.dark-mode {
-  color: #fdfdff;
+  color: var(--white);
 }
 
 @media screen and (min-width: 768px) {
@@ -181,10 +174,8 @@
   padding-top: 14px;
   padding-bottom: 14px;
 
-  color: #242424;
+  color: var(--l-m-dark);
   font-family: Poppins, sans-serif;
-  font-size: 14px;
-  font-style: normal;
   font-weight: 600;
   line-height: 1.42;
   /* 142.857% */
@@ -192,11 +183,11 @@
   text-transform: uppercase;
 
   border-radius: 12px;
-  border: 1px solid #7e8fdd;
+  border: 1px solid var(--color-accent);
 }
 
 .card__close.dark-mode {
-  color: #fdfdff;
+  color: var(--white);
 }
 
 @media screen and (min-width: 768px) {
@@ -211,7 +202,7 @@
   }
 }
 
-.svg__close {
+.btn-svg__close {
   display: flex;
   width: 48px;
   height: 48px;
@@ -219,12 +210,12 @@
   align-items: center;
 
   border-radius: 12px;
-  background: #7e8fdd;
+  background: var(--color-accent);
   border: transparent;
 }
 
 @media screen and (min-width: 768px) {
-  .svg__close {
+  .btn-svg__close {
     width: 56px;
     height: 56px;
   }
@@ -234,22 +225,14 @@
   display: block;
   stroke: currentColor;
   flex-shrink: 0;
-  width: 50px;
-  height: 50px;
-  color: #7e8fdd;
-  fill: rgba(253, 253, 255, 1);
-}
-
-.svg-icon {
   width: 18px;
   height: 18px;
+  color: rgba(253, 253, 255, 1);
   fill: rgba(253, 253, 255, 1);
-  padding: 0;
-  margin: 0;
 }
 
 @media screen and (min-width: 768px) {
-  .svg-icon {
+  .favor-ingred__svg {
     width: 24px;
     height: 24px;
   }

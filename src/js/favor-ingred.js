@@ -1,17 +1,34 @@
 // реалізувати логіку завантаження інформації з local storage та на основі неї створити масив з інградієнтами. викликати функцію відмалювання карток інградієнтів render-ingredients-cards.js та передати в неї цей масив інградієнтів та контейнер в якому необхідно відмалювати картки
 import axios from 'axios';
 import * as basicLightbox from 'basiclightbox';
-
+import 'basiclightbox/dist/basiclightbox.min.css';
+// import '../css/favor-ingred.css';
+import { customPaginationElement } from './element-pagination-custom';
 const BASE_URL = 'https://drinkify.b.goit.study/api/v1/';
 const cardContainerEl = document.querySelector('.favor-ingred__gallery');
 
 const KEY_BASKET = 'basket';
 const data = JSON.parse(localStorage.getItem(KEY_BASKET));
+console.log(data);
+const paginationRef = document.querySelector('#pagination-elements');
 
-if (data.length === 0) {
-  // вставляєм заглушку
-} else if (data.length > 6) {
-  // вставляєм пагінацію
+function isPaginationRequired(data) {
+  if (data.length === 0) {
+    // заглушка
+  } else if (data.length >= 6) {
+    // array, containerPagination, containerCoctails
+    paginationRef.classList.remove('visually-hidden');
+    console.log('Викликаємо пагінатор');
+    customPaginationElement(
+      data,
+      paginationRef,
+      cardContainerEl,
+      6,
+      cardMarkupImg
+    );
+  }else {
+    cardMarkupImg(data, cardContainerEl);
+  }
 }
 
 async function fetchIngredient(id) {
@@ -34,8 +51,8 @@ function trimText(text, maxLength) {
   return result;
 }
 
-function cardMarkupImg(data) {
-  return data
+function cardMarkupImg(data, container) {
+  const dataForRender = data
     .map(el => {
       return `
           <li class="favor-ingred__card-item" id="${el._id}">
@@ -52,11 +69,9 @@ function cardMarkupImg(data) {
         /['"]+/g,
         ''
       )}" type="button">learn more</button>
-              <button class="svg__close" type="button">
+              <button class="btn-svg__close" type="button">
                 <svg class="favor-ingred__svg" data-id="${el._id}">
-                  <use class="svg-icon" data-id="${
-                    el._id
-                  }" href="./images/sprite.svg#icon-trash"></use>
+                  <use href="./img/sprite.svg#icon-trash"></use>
                 </svg>
               </button>
             </div>
@@ -64,6 +79,7 @@ function cardMarkupImg(data) {
                   `;
     })
     .join('');
+  container.insertAdjacentHTML('beforeend', dataForRender);
 }
 
 Promise.all(
@@ -73,29 +89,20 @@ Promise.all(
   })
 ).then(data => {
   console.log(data);
-  cardContainerEl.insertAdjacentHTML('beforeend', cardMarkupImg(data));
+  isPaginationRequired(data);
 });
 
 function openModal(description) {
   const instance = basicLightbox.create(
     `
-          <div class="modal">
+          <div class="modal-ingredients">
               <p>
                 ${description}
               </p>
           </div>
-        `,
-    {
-      handler: null,
-      onShow(instance) {
-        this.handler = closeModal.bind(instance);
-        document.addEventListener('keydown', this.handler);
-      },
-      onClose(instance) {
-        document.removeEventListener('keydown', this.handler);
-      },
-    }
+        `
   );
+  console.log(instance)
   instance.show();
 }
 
@@ -110,6 +117,7 @@ cardContainerEl.addEventListener('click', onClick);
 async function onClick(event) {
   event.preventDefault();
   if (event.target.className.toString().includes('card__close')) {
+    console.log(event.target);
     openModal(event.target.dataset.source);
   }
 
