@@ -8,11 +8,11 @@ const BASE_URL_INGREDIENT = "https://drinkify.b.goit.study/api/v1/ingredients/";
 const divModalIngredient = document.querySelector('.modal-ingredient-details');
 const modal = document.querySelector('.modal-ingredients');
 
-//  ____________________розблокуй це коли буде модалка з коктейлем
+
 // const listCocktail = document.querySelector('.list-cocktail-ingredients');
 // listCocktail.addEventListener('click', selectedIngredient)
 
-//  ____________________розблокуй це коли буде модалка з коктейлем
+
 
 
 async function  selectedIngredient(evt) {
@@ -20,8 +20,10 @@ async function  selectedIngredient(evt) {
     if (evt.target.nodeName !== "LI") {
         return
     }
-    divModalIngredient.innerHTML = '';
+    console.log(modal)
     openModal();
+    divModalIngredient.innerHTML = '';
+    // openModal();
    
     // const btnModalIngredientBack = document.querySelector('.modal-ingredient-back')
     let idIngredient = evt.target.getAttribute('id');
