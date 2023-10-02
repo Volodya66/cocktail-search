@@ -1,34 +1,36 @@
 <header>
   <!--navigation-->
-<nav>
-  <ul class="desktop-menu">
-    <li><a href="#">Home</a></li>
-    <li class="favorite">
-      <a href="#">Favorite
-  <svg class="chevron-down">
-        <use href="../img/sprite.svg#icon-chevron-down"></use>
-      </svg> 
-    </a>
-      <ul class="submenu">
-        <li><a href="#">Favorite Cocktails</a></li>
-        <li><a href="#">Favorite Ingredients</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+  <nav>
+    <ul class="desktop-menu">
+      <li><a href="#">Home</a></li>
+      <li class="favorite">
+        <a href="#"
+          >Favorite
+          <svg class="chevron-down">
+            <use href="img/sprite.svg#icon-chevron-down"></use>
+          </svg>
+        </a>
+        <ul class="submenu">
+          <li><a href="#">Favorite Cocktails</a></li>
+          <li><a href="#">Favorite Ingredients</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
   <!--logo-->
-<div class="logo">
-  <a class="logo-link" href="/index.html">
-    <span class="logo-name">Drinkify</span>
-    <svg class="logo-icon">
-      <use href="../img/sprite.svg#icon-cocktail"></use>
-    </svg>
-  </a>
-</div>
-
-
+  <div class="logo">
+    <a class="logo-link" href="/index.html">
+      <span class="logo-name">Drinkify</span>
+      <svg class="logo-icon">
+        <use href="../img/sprite.svg#icon-cocktail"></use>
+      </svg>
+    </a>
+  </div>
 
   <div class="menu-toggle">
+    <button class="btn-change-theme" id="js-btn-change-theme" type="button">
+      <div class="circle-change-theme"></div>
+    </button>
   </div>
 
   <button class="menu-button" data-modal-open>
@@ -36,5 +38,5 @@
       <use href="../img/sprite.svg#icon-burger"></use>
     </svg>
   </button>
-<load src="./mobile-menu.html" />
+  <load src="./mobile-menu.html" />
 </header>
