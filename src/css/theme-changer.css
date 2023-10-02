@@ -1,0 +1,30 @@
+.btn-change-theme {
+  width: 100px;
+  height: 55px;
+  border: 3px solid black;
+  border-radius: 50px;
+  overflow: hidden;
+ background-color: #ffffff;
+}
+
+.circle-change-theme {
+  width: 40px; 
+  height: 40px; 
+  background-color: #9CDFDF;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-change-theme.clicked .circle-change-theme {
+  transform: translateX(43px); 
+}
+
+/* .btn-change-theme.change-theme {
+  border: 3px solid #7E8FDD;
+ background-color:#9CDFDF;
+}
+
+.circle-change-theme.change-theme {
+  background-color: #FFFFFF;
+} */
+
