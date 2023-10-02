@@ -19,7 +19,7 @@ function renderSearchLetters() {
 
 function renderButtons() {
   const arrayBtnLetters = arrayLetters.map(letter => {
-    return `<button class="buton-letters change-theme">${letter}</button>`;
+    return `<button class="buton-letters">${letter}</button>`;
   });
 
   lettersContainer.innerHTML = arrayBtnLetters.join('');
