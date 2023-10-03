@@ -1,6 +1,9 @@
 .hero-right-background1_dark {
   visibility: hidden;
 }
+.hero-right.dark-mode .hero-right-background1_dark {
+  visibility: visible;
+}
 
 .hero {
   margin: 0 auto;
