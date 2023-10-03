@@ -104,6 +104,9 @@
   list-style: disc;
   margin-left: 15px;
 }
+.modal-ingredients.dark-mode .modal-ingredient-list-item {
+  color: rgba(253, 253, 255, 0.8);
+}
 
 .modal-ingredient-list-btn {
   display: flex;
@@ -125,16 +128,12 @@
   font-weight: 600;
   line-height: 142.857%;
   letter-spacing: 0.28px;
+  transition: all var(--t-dur) var(--t-tf);
 }
 
 .modal-ingredient-add:hover,
 .modal-ingredient-add:focus {
   background-color: var(--btn-h);
-}
-
-.modal-ingredient-back:hover,
-.modal-ingredient-back:focus {
-  background-color: #24242433;
 }
 
 .modal-ingredient-back {
@@ -149,8 +148,19 @@
   font-weight: 600;
   line-height: 142.857%;
   letter-spacing: 0.28px;
+  transition: all var(--t-dur) var(--t-tf);
 }
-
+.modal-ingredients.dark-mode .modal-ingredient-back {
+  background-color: rgba(253, 253, 255, 0.1);
+  color: var(--white);
+}
+.modal-ingredient-back:hover,
+.modal-ingredient-back:focus {
+  background-color: #24242433;
+}
+.modal-ingredients.dark-mode .modal-ingredient-back:hover {
+  background-color: rgba(253, 253, 255, 0.2);
+}
 @media screen and (min-width: 765.9px) {
   .modal-ingredient-details {
     /* width: 600px; */
