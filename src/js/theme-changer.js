@@ -1,18 +1,17 @@
 // реалізувати логіку перемикача теми сайту та зробити іменований експорт змінної зі значенням true, якщо темна тема увімкнена, false, якщо темна тема вимкнена, також реалізувати логіку додавання цього значення у властивість в localStorage, та зчитування цього, якщо користувач вже відвідував сайт і вибирав тему
 
-const btnChangeThemeRef = document.querySelector('#js-btn-change-theme');
+const btnChangeThemeRef = document.querySelectorAll('#js-btn-change-theme');
 function onBtnChangerClick(e) {
   const elementDarkThemeChange = [
     ...document.querySelectorAll('.change-theme'),
   ];
   elementDarkThemeChange.forEach(element => {
-      element.classList.toggle('dark-mode');
+    element.classList.toggle('dark-mode');
   });
 }
-btnChangeThemeRef.addEventListener('click', onBtnChangerClick);
-
-
-
+btnChangeThemeRef.forEach(element => {
+  element.addEventListener('click', onBtnChangerClick);
+});
 
 // const btnChangeThemeRef = document.querySelector('#js-btn-change-theme');
 

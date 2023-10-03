@@ -22,6 +22,11 @@
   row-gap: 20px;
   justify-content: center;
 }
+@media screen and (max-width: 767.98px) {
+  .cocktails {
+    padding-bottom: 80px;
+  }
+}
 @media screen and (min-width: 768px) {
   .cocktails__list {
     row-gap: 32px;
@@ -42,7 +47,7 @@
   width: 335px;
 }
 /* dark mode style+++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-.cocktails__item.dark-mode {
+.cocktails.dark-mode li {
   background-color: var(--d-m-dark);
 }
 .cocktails__item :not(:last-child) {

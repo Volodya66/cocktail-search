@@ -7,12 +7,19 @@
   width: 100%;
   height: 100%;
   background-color: rgba(21, 21, 21, 0.6);
+  overflow-x: auto;
+}
+.modal-cocktails.dark-mode .wrapper-modal-cocktails {
+  background-color: var(--l-m-dark);
+}
+.modal-cocktails.dark-mode {
+  color: var(--white);
 }
 
 .wrapper-modal-cocktails {
   position: fixed;
   z-index: 999;
-
+  max-height: 600px;
   padding: 40px 20px;
   top: 50%;
   left: 50%;
@@ -20,7 +27,7 @@
   background-color: var(--l-m-bg);
   border-radius: 20px;
   overflow-y: auto;
-  height: 905px;
+  /* height: 905px; */
   width: 335px;
 }
 
@@ -38,6 +45,10 @@
   border: none;
   background-color: var(--l-m-bg);
   stroke: var(--l-m-dark);
+}
+.modal-cocktails.dark-mode .close-modal-cocktails {
+  background-color: transparent;
+  stroke: #fff;
 }
 
 .modal-cocktails-card-part-1 {
@@ -61,6 +72,10 @@
   line-height: 18px;
   color: var(--l-m-dark);
 }
+.modal-cocktails.dark-mode .modal-cocktails-info-part-title,
+.modal-cocktails.dark-mode .modal-cocktails-info-part-2-text {
+  color: var(--white);
+}
 .modal-cocktails-info-part-undotitle {
   font-family: 'Poppins';
   font-size: 14px;
@@ -69,6 +84,16 @@
   color: #24242480;
 
   margin-top: 8px;
+}
+.modal-cocktails.dark-mode .modal-cocktails-info-part-undotitle {
+  color: rgba(253, 253, 255, 0.5);
+}
+.list-cocktail-ingredients-item {
+  transition: all var(--t-dur) var(--t-tf);
+}
+.list-cocktail-ingredients-item:hover {
+  color: var(--color-accent);
+  cursor: pointer;
 }
 .modal-cocktails-info-part-1-list {
   list-style: inside;
@@ -84,6 +109,9 @@
   color: #242424cc;
 
   margin-top: 20px;
+}
+.modal-cocktails.dark-mode .modal-cocktails-info-part-1-list {
+  color: rgba(253, 253, 255, 0.8);
 }
 
 .modal-cocktails-card-part-2 {
@@ -125,6 +153,7 @@
 .modal-button-favorite {
   color: var(--white);
   background-color: var(--color-accent);
+  transition: all var(--t-dur) var(--t-tf);
 }
 .modal-button-favorite:hover,
 .modal-button-favorite:focus {
@@ -133,17 +162,25 @@
 .modal-button-back {
   color: var(--l-m-dark);
   background-color: #2424241a;
+  transition: all var(--t-dur) var(--t-tf);
 }
 .modal-button-back:hover,
 .modal-button-back:focus {
   background-color: #24242433;
 }
+.modal-cocktails.dark-mode .modal-button-back {
+  color: var(--white);
+  background-color: rgba(253, 253, 255, 0.1);
+}
+.modal-cocktails.dark-mode .modal-button-back:hover {
+  background-color: rgba(253, 253, 255, 0.2);
+}
 
 @media screen and (min-width: 768px) {
   .wrapper-modal-cocktails {
-    max-height: 569px;
     width: 600px;
     padding: 40px 40px;
+    max-height: 600px;
   }
 
   .modal-cocktails-card-part-1 {

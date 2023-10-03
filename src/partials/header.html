@@ -1,42 +1,47 @@
-<header>
-  <!--navigation-->
-  <nav>
-    <ul class="desktop-menu">
-      <li><a href="#">Home</a></li>
-      <li class="favorite">
-        <a href="#"
-          >Favorite
-          <svg class="chevron-down">
-            <use href="img/sprite.svg#icon-chevron-down"></use>
-          </svg>
-        </a>
-        <ul class="submenu">
-          <li><a href="#">Favorite Cocktails</a></li>
-          <li><a href="#">Favorite Ingredients</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-  <!--logo-->
-  <div class="logo">
-    <a class="logo-link" href="/index.html">
-      <span class="logo-name">Drinkify</span>
-      <svg class="logo-icon">
-        <use href="./img/sprite.svg#icon-cocktail"></use>
+<header class="header">
+  <div class="container header-container">
+    <nav>
+      <ul class="desktop-menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="favorite">
+          <a href="#"
+            >Favorite
+            <svg class="chevron-down">
+              <use href="img/sprite.svg#icon-chevron-down"></use>
+            </svg>
+          </a>
+          <ul class="submenu">
+            <li><a href="favorite-cocktails.html">Favorite Cocktails</a></li>
+            <li>
+              <a href="favorite-ingredients.html">Favorite Ingredients</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <!--logo-->
+    <div class="logo">
+      <a class="logo-link" href="index.html">
+        <span class="logo-name change-theme">Drinkify</span>
+        <svg class="logo-icon">
+          <use href="img/sprite.svg#icon-cocktail"></use>
+        </svg>
+      </a>
+    </div>
+
+    <div class="menu-toggle">
+      <button
+        class="btn-change-theme"
+        id="js-btn-change-theme"
+        type="button"
+      ></button>
+    </div>
+
+    <button class="menu-button" data-modal-open>
+      <svg class="menu-burger change-theme" width="40" height="40">
+        <use href="img/sprite.svg#icon-burger"></use>
       </svg>
-    </a>
-  </div>
-
-  <div class="menu-toggle">
-    <button class="btn-change-theme" id="js-btn-change-theme" type="button">
-      <div class="circle-change-theme"></div>
     </button>
+    <load src="./mobile-menu.html" />
   </div>
-
-  <button class="menu-button" data-modal-open>
-    <svg class="menu-burger" width="40" height="40">
-      <use href="./img/sprite.svg#icon-burger"></use>
-    </svg>
-  </button>
-  <load src="./mobile-menu.html" />
 </header>

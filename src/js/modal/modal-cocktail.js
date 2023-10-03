@@ -1,20 +1,19 @@
 import axios from 'axios';
 // import { renderCocktailModal } from '../render/render-coctails-cards';
 
-import {selectedIngredient} from './modal-ingredient'
+import { selectedIngredient } from './modal-ingredient';
 
 const BASE_URL = 'https://drinkify.b.goit.study/api/v1';
 // const modalOpenButtons = document.querySelectorAll('[data-modal-open]');
 const modalCloseButtons = document.querySelectorAll('[data-modal-close]');
 const cocktailsList = document.querySelector('.cocktails__list');
 
-
 function addListenerToLearnMoreBtn(containerUlRef) {
   function onCocktailCardItemBtnClick(e) {
     if (e.target.nodeName !== 'BUTTON' || !e.target.dataset.id) {
       return;
     }
-    
+
     const modalId = e.target.dataset.modalOpen;
     const modalCardId = e.target.dataset.id;
     const modal = document.getElementById(modalId);
@@ -56,7 +55,7 @@ async function getRequestModalCocktail(modalCardId) {
       const cocktailsList = document.querySelector('.js-modal-cocktails');
       renderCocktailModal(data, cocktailsList);
       const listCocktail = document.querySelector('.list-cocktail-ingredients');
-      listCocktail.addEventListener('click', selectedIngredient)
+      listCocktail.addEventListener('click', selectedIngredient);
     })
     .catch(error => {
       console.error(error.message);
@@ -102,11 +101,7 @@ function renderCocktailModal(images, container) {
             <h2 class="modal-cocktails-card-title">${image.drink}</h2>
             <h2 class="modal-cocktails-info-part-title">INGREDIENTS:</h2>
             <p class="modal-cocktails-info-part-undotitle">Per cocktail</p>
-<<<<<<< HEAD
-            <ul class="modal-cocktails-info-part-1-list  list-cocktail-ingredients">
-=======
             <ul class="modal-cocktails-info-part-1-list list-cocktail-ingredients">
->>>>>>> main
             </ul>
           </li>
         </ul>
@@ -128,5 +123,3 @@ function renderCocktailModal(images, container) {
     );
   }
 }
-
-

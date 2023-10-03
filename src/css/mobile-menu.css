@@ -1,14 +1,6 @@
 /* ЦЕ СТИЛІ ДЛЯ ПЕРЕМИКАЧА ТА БУРГЕРА
 ЇХ ТРЕБА БУДЕ ЗАБРАТИ */
 
-.xxxxxxxxxxxxxxx {
-  display: flex;
-  justify-content: center;
-  width: 50px;
-  height: 32px;
-  border: black;
-}
-
 .aaaaaaaaaaa {
   width: 50px;
   height: 32px;
@@ -39,8 +31,10 @@
   width: 100%;
   height: 100%;
   background-color: var(--color-accent);
-  /* transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+  z-index: 5;
+  transition: opacity var(--t-dur) var(--t-tf),
+    visibility var(--t-dur) var(--t-tf),
+    background-color var(--t-dur) var(--t-tf);
 }
 
 .head-mobile-div {
@@ -75,10 +69,10 @@ a.mobile-menu-logo {
 }
 
 .head-menu-close {
-  width: 32px;
-  height: 32px;
-  padding-left: 0;
-  padding-right: 0;
+  display: block;
+  width: 28px;
+  height: 28px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,13 +82,25 @@ a.mobile-menu-logo {
 
 .mobile-menu-buttons {
   display: flex;
+  align-items: center;
   gap: 18px;
+}
+.mobile-menu-buttons .menu-toggle .btn-change-theme {
+  display: block;
+  width: 64px;
+  height: 32px;
+  background-color: #6b7dc9;
+  border: 1px solid var(--white);
+  border-radius: 40px;
 }
 
 .head-menu-close-button {
   stroke: var(--white);
   width: 32px;
   height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* transform: scale(1); */
   /* transition: var(--transition-transform), var(--transition-stroke); */
 }

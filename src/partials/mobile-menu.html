@@ -1,64 +1,58 @@
-<!-- не забути видалити цю кнопку -->
-<button data-modal-open class="burger-button" type="button">
-  <svg class="burger-svg">
-    <use href="./img/sprite.svg#icon-burger"></use>
-  </svg>
-</button>
-
 <!-- розмітка -->
 
 <div class="backdrop-header container is-hidden" data-modal>
-  <div class="head-mobile-div">
-    <div class="bbb">
-      <a class="mobile-menu-logo" href="./index.html"
-        >DRINKIFY<svg class="mobile-menu-icon">
-          <use href="./img/sprite.svg#icon-cocktail"></use>
-        </svg>
-      </a>
-    </div>
-
-    <div class="mobile-menu-buttons">
-      <!-- це імітація кнопки-перемикача теми -->
-      <!-- не забути видалити цю кнопку? -->
-
-      <button class="xxxxxxxxxxxxxxx" type="button">
-        <!-- <svg class="aaaaaaaaaaa">
-        <use href="./images/sprite.svg#icon-close-modal"></use>
-      </svg> -->
-      </button>
-
-      <button data-modal-close class="head-menu-close" type="button">
-        <svg class="head-menu-close-button">
-          <use href="./img/sprite.svg#icon-close"></use>
-        </svg>
-      </button>
-    </div>
-  </div>
-
-  <div class="header-mobile-menu">
-    <div class="head-menu-list">
-      <a class="head-menu-item" href="./index.html">Home</a>
-    </div>
-
-    <div class="dropdown">
-      <div class="dropbtn-div">
-        <a class="dropbtn dropdown-trigger" href="#"
-          >Favorite<svg class="icon-chevron-down" width="24" height="24">
-            <use href="./img/sprite.svg#icon-chevron-down"></use></svg
-        ></a>
+  <div class="container">
+    <div class="head-mobile-div">
+      <div class="bbb">
+        <a class="mobile-menu-logo" href="index.html"
+          >DRINKIFY<svg class="mobile-menu-icon">
+            <use href="./img/sprite.svg#icon-cocktail"></use>
+          </svg>
+        </a>
       </div>
-      <!-- <button class="dropbtn dropdown-trigger">Favorite</button> -->
-      <div class="dropdown-content" id="myDropdown">
-        <div class="dropdown-menu-links">
-          <a href="#">Favorite cocktails</a>
-          <a href="#">Favorite ingredients</a>
+
+      <div class="mobile-menu-buttons">
+        <div class="menu-toggle">
+          <button
+            class="btn-change-theme"
+            id="js-btn-change-theme"
+            type="button"
+          ></button>
+        </div>
+
+        <button data-modal-close class="head-menu-close" type="button">
+          <svg class="head-menu-close-button">
+            <use href="./img/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="header-mobile-menu">
+      <div class="head-menu-list">
+        <a class="head-menu-item" href="./index.html">Home</a>
+      </div>
+
+      <div class="dropdown">
+        <div class="dropbtn-div">
+          <a class="dropbtn dropdown-trigger" href="#"
+            >Favorite<svg class="icon-chevron-down" width="24" height="24">
+              <use href="./img/sprite.svg#icon-chevron-down"></use></svg
+          ></a>
+        </div>
+        <!-- <button class="dropbtn dropdown-trigger">Favorite</button> -->
+        <div class="dropdown-content" id="myDropdown">
+          <div class="dropdown-menu-links">
+            <a href="favorite-cocktails.html">Favorite cocktails</a>
+            <a href="favorite-ingredients.html">Favorite ingredients</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div>
-    <svg class="icon-star" width="391" height="391">
-      <use href="./img/sprite.svg#icon-7"></use>
-    </svg>
+    <div>
+      <svg class="icon-star" width="391" height="391">
+        <use href="./img/sprite.svg#icon-7"></use>
+      </svg>
+    </div>
   </div>
 </div>

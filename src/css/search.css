@@ -1,6 +1,7 @@
 .search {
   padding-top: 100px;
 }
+
 .search-input-container {
   position: relative;
   width: 334px;
@@ -28,6 +29,9 @@
 }
 .search-input::placeholder {
   font-family: inherit;
+}
+.search-input::placeholder.dark-mode {
+  color: #fff;
 }
 
 .icon-search {
@@ -69,13 +73,15 @@
   margin-bottom: 40px;
   row-gap: 16px;
   column-gap: 8px;
+  padding: 20px 0;
 }
 
 .letters-select {
   display: block;
   width: 90px;
   height: 34px;
-  margin: 20px auto;
+
+  margin: 0 auto;
   border: 1px solid var(--d-m-bg);
   border-radius: 8px;
   background-color: rgba(126, 143, 221, 0.4);
@@ -87,4 +93,9 @@
 
 .is-hidden {
   display: none;
+}
+@media screen and (max-width: 767.98px) {
+  .search {
+    padding-top: 10px;
+  }
 }
