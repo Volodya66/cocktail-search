@@ -2,6 +2,7 @@ import getCocktailsBySearch from './fetch/get-cocktails-by-search';
 import { renderCocktailsList } from './render/render-coctails-cards';
 import { renderingCardDependency } from './fetch/get-random-cockt';
 import { paginationElement } from './element-pagination';
+import { noResultAll } from './render/render-element-not-found';
 const searchForm = document.querySelector('.search-form');
 const searchInput = document.querySelector('.search-input');
 const lettersContainer = document.querySelector('.container-letters');
@@ -14,9 +15,10 @@ lettersContainer.addEventListener('change', onSelectChange);
 
 searchForm.addEventListener('submit', onChangeInput);
 async function isPaginationRequired(data) {
-  if (data.length === 0) {
-    // заглушка
-  } else if (data.length > screenWidth) {
+  if (!data) {
+    return;
+  }
+  if (data.length > screenWidth) {
     // array, containerPagination, containerCoctails
     cocktailsTitle.innerHTML = 'Searching results';
     paginationRef.classList.remove('visually-hidden');

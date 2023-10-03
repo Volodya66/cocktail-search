@@ -17,7 +17,7 @@ function addListenerToLearnMoreBtn(containerUlRef) {
     const modalId = e.target.dataset.modalOpen;
     const modalCardId = e.target.dataset.id;
     const modal = document.getElementById(modalId);
-    console.log(modalId);
+
     openModal(modal, modalCardId);
     //тут далі можеш свою логіку запиту писати то шо поверне e.target.dataset.id буде айдішніком тої картки, на яку нажали лерн мор
   }
@@ -81,7 +81,7 @@ function renderCocktailModal(images, container) {
     ingredientsArr.push(element.measure + ' ' + element.title);
     ingredientsId.push(element.ingredientId);
   });
-  console.log(ingredientsArr);
+
   container.innerHTML = images
     .map(
       image => `
