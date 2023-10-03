@@ -1,3 +1,4 @@
+import spriteUrl from '/img/sprite.svg';
 export function markupModalIngredients(objParam) {
   return objParam
     .map(({ type, title, description, abv, country, flavour }) => {
@@ -7,7 +8,7 @@ export function markupModalIngredients(objParam) {
       return `
            <button class="close-modal-cocktails js-close-btn" data-modal-close-ingr>
         <svg class="svg-close-modal-cocktails" width="22" height="22">
-          <use href="/img/sprite.svg#icon-close"></use>
+          <use href="${spriteUrl}#icon-close"></use>
         </svg>
       </button>
       <h2 class="modal-ingredient-title">${title}</h2>

@@ -14,7 +14,7 @@ async function selectedIngredient(evt) {
   if (evt.target.nodeName !== 'LI') {
     return;
   }
-  console.log(modal);
+
   openModal();
   divModalIngredient.innerHTML = '';
   // openModal();

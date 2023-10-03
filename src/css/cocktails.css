@@ -45,6 +45,12 @@
   background-color: var(--white);
   border-radius: 16px;
   width: 335px;
+  transition: all var(--t-dur) var(--t-tf);
+}
+
+.cocktails__item:hover {
+  box-shadow: rgba(126, 143, 221, 0.5) 0px 19px 38px,
+    rgba(126, 143, 221, 0.4) 0px 15px 12px;
 }
 /* dark mode style+++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 .cocktails.dark-mode li {
