@@ -8,6 +8,7 @@
   height: 100%;
   background-color: rgba(21, 21, 21, 0.6);
   overflow-x: auto;
+  transition: all var(--t-dur) var(--t-tf);
 }
 .modal-cocktails.dark-mode .wrapper-modal-cocktails {
   background-color: var(--l-m-dark);
@@ -29,6 +30,10 @@
   overflow-y: auto;
   /* height: 905px; */
   width: 335px;
+  transition: all var(--t-dur) var(--t-tf);
+}
+.wrapper-modal-cocktails.semi-hidden {
+  opacity: 0.5;
 }
 
 .close-modal-cocktails {
