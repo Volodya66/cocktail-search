@@ -15,10 +15,9 @@ export function renderCocktailsList(images, container) {
 <button type="button" class="learnmore__btn"  data-modal-open="modal-cocktails" data-id="${
         image._id
       }">learn more</button>
-<button type="button"  class="svg__btn  ${checkElemInLocStor(
-        image._id,
-        'favorites'
-      )}"> 
+<button type="button" data-cocktId = "${
+        image._id
+      }"  class="svg__btn  ${checkElemInLocStor(image._id, 'favorites')}"> 
  <svg class="svg-heart">
 <use class="cocktails__svg add_favorites_js" href="${spriteUrl}#icon-heart"></use>
 </svg>

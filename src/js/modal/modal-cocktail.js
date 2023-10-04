@@ -101,6 +101,7 @@ function renderCocktailModal(images, container) {
           <li class="modal-cocktails-card-item">
             <h2 class="modal-cocktails-card-title">${image.drink}</h2>
             <h2 class="modal-cocktails-info-part-title">INGREDIENTS:</h2>
+            <p class="visually-hidden modal-cocktail-item-description">${image.description}</p>
             <p class="modal-cocktails-info-part-undotitle">Per cocktail</p>
             <ul class="modal-cocktails-info-part-1-list list-cocktail-ingredients">
             </ul>
