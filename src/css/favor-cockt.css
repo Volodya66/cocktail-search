@@ -1,3 +1,10 @@
+.favor-cockt {
+  padding-top: 80px;
+}
+.favor__list {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
 .svg-icon {
   pointer-events: none;
   width: 48px;
@@ -14,6 +21,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .favor-cockt {
+    padding-top: 100px;
+  }
   .favor__item {
     padding-bottom: 24px;
 
@@ -21,11 +31,22 @@
 
     width: 344px;
   }
+  .favor__list {
+    padding-top: 32px;
+    padding-bottom: 100px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
+  .favor-cockt {
+    padding-top: 104px;
+  }
   .favor__item {
     width: 344px;
+  }
+  .favor__list {
+    padding-top: 44px;
+    padding-bottom: 100px;
   }
 }
 

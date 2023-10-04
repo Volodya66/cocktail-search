@@ -11,5 +11,5 @@ import './js/modal/modal-cocktail';
 import './js/modal/modal-ingredient';
 import './js/render/render-modal-ingred';
 import './js/element-pagination';
-
+// import './js/favor-cockt';
 import './js/init-search';
