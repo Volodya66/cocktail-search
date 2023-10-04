@@ -1,25 +1,70 @@
 // реалізувати логіку завантаження інформації з local storage та на основі неї створити масив з коктейлями. викликати функцію відмалювання карток та передати в неї цей масив коктейлів
+// cocktailsList.addEventListener('click', changeEvents);
+import { cocktailsList } from './favor-cocktails-addListenerBtn';
+import { checkElemInLocStor } from './check-elem-in-loc-stor';
+const modalCocktBtnFav = document.querySelector('.modal-button-favorite');
 
-cocktailsList.addEventListener('click', changeEvents);
+function onModalCocktBtnFav(e) {
+  const modalCocktailCard = document.querySelector('.js-modal-cocktails-item');
+  const modalCocktailCardId = modalCocktailCard.getAttribute('id');
+  const isElemFav = checkElemInLocStor(modalCocktailCardId, 'modalCocktail');
+  if (isElemFav) {
+    modalCocktBtnFav.textContent = 'Remove from favorite';
+    let favoriteListLocalStorage = getFavorites();
 
-export  function changeEvents(event) {
+    console.log(favoriteListLocalStorage.length);
+
+    favoriteListLocalStorage = favoriteListLocalStorage.filter(
+      favorite => favorite.id !== modalCocktailCardId
+    );
+    saveFavorites(favoriteListLocalStorage);
+    console.log(favoriteListLocalStorage.length);
+    return;
+  } else {
+    modalCocktBtnFav.textContent = 'Add to favorite';
+  }
+}
+export function changeEvents(event) {
   const target = event.target;
+  // console.log('виклик changeEvents');
   if (target.classList.contains('learnmore__btn')) {
-    console.log("Open modal");
+    modalCocktBtnFav.addEventListener('click', onModalCocktBtnFav);
+
+    console.log('Open modal');
   }
-  if (target.classList.contains('svg__btn')) {
-    addToFavorites(event);
-    svg.classList.remove('add_favorites_js');
-    svg.classList.add('remove_favorites_js');
+  if (!target.classList.contains('svg__btn')) {
+    return;
   }
-  return;
+  if (target.classList.contains('remove_favorites_js')) {
+    target.classList.add('add_favorites_js');
+    target.classList.remove('remove_favorites_js');
+
+    const favorcard = target.closest('.cocktails__item');
+    const favoriteCardIdRemove = favorcard.getAttribute('id');
+
+    let favoriteListLocalStorage = getFavorites();
+
+    console.log(favoriteListLocalStorage.length);
+
+    favoriteListLocalStorage = favoriteListLocalStorage.filter(
+      favorite => favorite.id !== favoriteCardIdRemove
+    );
+
+    saveFavorites(favoriteListLocalStorage);
+    console.log(favoriteListLocalStorage.length);
+    return;
+  }
+
+  addToFavorites(event);
+  target.classList.remove('add_favorites_js');
+  target.classList.add('remove_favorites_js');
 }
 
 // LOCAL STORAGE GET AND SAVE
-let favorCock = getFavorites();
-console.log(favorCock);
+// let favorCock = getFavorites();
+// console.log(favorCock);
 
-function getFavorites() {
+export function getFavorites() {
   return JSON.parse(localStorage.getItem('favorites')) || [];
 }
 
@@ -34,12 +79,13 @@ function addToFavorites(event) {
     const cocktailData = {
       id: id,
       name: card.querySelector('.cocktails__item__header').textContent,
-      description: card.querySelector('.cocktails__item__description').textContent,
+      description: card.querySelector('.cocktails__item__description')
+        .textContent,
       imageSrc: card.querySelector('.cocktails__item__img').src,
     };
+    let favorCock = getFavorites();
 
-
-    if (!favorCock.some((favor) => favor.id === cocktailData.id)) {
+    if (!favorCock.some(favor => favor.id === cocktailData.id)) {
       favorCock.push(cocktailData);
       saveFavorites(favorCock);
     }
@@ -51,7 +97,9 @@ function addToFavorites(event) {
 const favorList = document.querySelector('.favor__list');
 
 function renderFavorCocktailsList() {
-  favorList.innerHTML = favorCock.map((favorite) => `
+  favorList.innerHTML = favorCock
+    .map(
+      favorite => `
     <li class="favor__item" id=${favorite.id}>
       <img class="cocktails__item__img" src=${favorite.imageSrc} alt=${favorite.name}>
       <h3 class="cocktails__item__header">${favorite.name}</h3>
@@ -65,17 +113,19 @@ function renderFavorCocktailsList() {
         </button>
       </div>
     </li>
-  `).join('');
+  `
+    )
+    .join('');
 }
 
-renderFavorCocktailsList(favorCock);
+// renderFavorCocktailsList(favorCock);
 
-favorList.addEventListener('click', changeFavorEvents);
+// favorList.addEventListener('click', changeFavorEvents);
 
 function changeFavorEvents(event) {
   const target = event.target;
   if (target.classList.contains('learnmore__btn')) {
-    console.log("Open modal");
+    console.log('Open modal');
   } else if (target.classList.contains('trash__btn')) {
     removeFromFavor(event);
   }
@@ -85,7 +135,7 @@ function removeFromFavor(event) {
   const favorcard = event.target.closest('.favor__item');
   const id = favorcard.getAttribute('id');
 
-  favorCock = favorCock.filter((favorite) => favorite.id !== id);
+  favorCock = favorCock.filter(favorite => favorite.id !== id);
   saveFavorites(favorCock);
 
   renderFavorCocktailsList(favorCock);

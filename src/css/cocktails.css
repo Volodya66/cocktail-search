@@ -140,15 +140,18 @@
 .svg-heart {
   width: 24px;
   height: 24px;
+  pointer-events: none;
+  fill: transparent;
+  transition: all var(--t-dur) var(--t-tf);
 }
 
 .cocktails__svg {
   width: 18px;
   height: 18px;
 }
-.add_favorites_js {
+.add_favorites_js .svg-heart {
   fill: transparent;
 }
-.remove_favorites_js {
+.remove_favorites_js .svg-heart {
   fill: #fdfdff;
 }

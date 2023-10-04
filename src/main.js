@@ -13,3 +13,5 @@ import './js/render/render-modal-ingred';
 import './js/element-pagination';
 // import './js/favor-cockt';
 import './js/init-search';
+import './js/favor-cocktails-addListenerBtn';
+import './js/check-elem-in-loc-stor';

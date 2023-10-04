@@ -2,6 +2,7 @@ import axios from 'axios';
 // import { renderCocktailModal } from '../render/render-coctails-cards';
 
 import { selectedIngredient } from './modal-ingredient';
+import { checkElemInLocStor } from '../check-elem-in-loc-stor';
 
 const BASE_URL = 'https://drinkify.b.goit.study/api/v1';
 // const modalOpenButtons = document.querySelectorAll('[data-modal-open]');
@@ -85,7 +86,7 @@ function renderCocktailModal(images, container) {
   container.innerHTML = images
     .map(
       image => `
-        <li class="js-modal-cocktails-item id=${image._id}">
+        <li class="js-modal-cocktails-item" id="${image._id}">
         <ul class="modal-cocktails-card-part-1 list">
           <li class="modal-cocktails-card-item">
             <div class="modal-cocktails-img-wrapper">
@@ -113,6 +114,15 @@ function renderCocktailModal(images, container) {
       `
     )
     .join('');
+  const modalCocktBtnFav = document.querySelector('.modal-button-favorite');
+  const modalCocktailCard = document.querySelector('.js-modal-cocktails-item');
+  const modalCocktailCardId = modalCocktailCard.getAttribute('id');
+  const isElemFav = checkElemInLocStor(modalCocktailCardId, 'modalCocktail');
+  if (isElemFav) {
+    modalCocktBtnFav.textContent = 'Remove from favorite';
+  } else {
+    modalCocktBtnFav.textContent = 'Add to favorite';
+  }
   const ingredientsList = document.querySelector(
     '.modal-cocktails-info-part-1-list'
   );
