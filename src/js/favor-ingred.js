@@ -5,8 +5,10 @@ import * as basicLightbox from 'basiclightbox';
 // import '../css/favor-ingred.css';
 import { customPaginationElement } from './element-pagination-custom';
 import { noResultFavorIngred } from './render/render-element-not-found';
+import { markupModalIngredients } from './render/render-modal-ingred';
 const BASE_URL = 'https://drinkify.b.goit.study/api/v1/';
 const cardContainerEl = document.querySelector('.favor-ingred__gallery');
+const modal = document.querySelector('.modal-cocktails');
 
 const KEY_BASKET = 'basket';
 const data = JSON.parse(localStorage.getItem(KEY_BASKET));
@@ -17,13 +19,27 @@ function onIngredLearnMoreBtnClick(e) {
   if (e.target.className !== 'card__close') {
     return;
   }
+  const ingredList = document.querySelector('.favor-ingred__gallery');
+  modal.classList.remove('is-hidden');
+  const modalId = e.target
+    .closest('.favor-ingred__card-item')
+    .getAttribute('id');
+  const elementFindId = data.filter(el => el.id === modalId);
 
-  // const cocktailsList = document.querySelector('.js-modal-cocktails');
-  // const modalId = e.target.dataset.modalOpen;
+  markupModalIngredients(elementFindId);
+
+  const modalCloseButtons = document.querySelectorAll('[data-modal-close]');
+  modalCloseButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const modal = button.closest('[data-modal]');
+      modal.classList.add('is-hidden');
+    });
+  });
+
   // const modalCardId = e.target.dataset.id;
   // const modal = document.getElementById(modalId);
   // modal.classList.remove('is-hidden');
-  console.log('slkasdfg');
+  // console.log('slkasdfg');
 }
 function onIngredTrashBtnClick(e) {
   if (e.target.className !== 'btn-svg__close') {
