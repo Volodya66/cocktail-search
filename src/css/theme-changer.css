@@ -10,8 +10,8 @@
 .circle-change-theme {
   width: 23px; 
   height: 23px; 
-  background-color: #9CDFDF;
-  border: 1px solid #9CDFDF;
+  background-color: var(--tab);
+  border: 1px solid var(--tab);
   border-radius: 50%;
   transform: translateX(-3px);
   transition: transform 0.3s ease-in-out;
@@ -24,6 +24,26 @@
 }
  
 .btn-change-theme.clicked  {
-  border: 2px solid #7E8FDD;
-  background-color:#9CDFDF;
+  border: 2px solid var(--color-accent);
+  background-color:var(--tab);
+}
+
+.mobile-menu-buttons .menu-toggle .btn-change-theme {
+  display: block;
+  width: 64px;
+  height: 32px;
+  border-radius: 40px;
+  background-color: var(--color-accent);
+  border: 1px solid #FFFFFF;
+}
+
+.mobile-menu-buttons .menu-toggle .btn-change-theme.clicked {
+  border: 2px solid var(--color-accent);
+  background-color:var(--tab);
+}
+ 
+@media (max-width: 1279px) {
+   .btn-change-theme {
+    display: none;
+  }
 }
