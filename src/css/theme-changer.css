@@ -1,29 +1,49 @@
-/* .btn-change-theme {
-  width: 100px;
-  height: 55px;
-  border: 3px solid black;
-  border-radius: 50px;
-  overflow: hidden;
- background-color: #ffffff;
-} */
-
-/* .circle-change-theme {
-  width: 40px;
-  height: 40px;
-  background-color: #9cdfdf;
-  border-radius: 50%;
-  transition: transform 0.3s ease-in-out;
-} */
-
-/* .btn-change-theme.clicked .circle-change-theme {
-  transform: translateX(43px);
-} */
-
-/* .btn-change-theme.change-theme {
-  border: 3px solid #7E8FDD;
- background-color:#9CDFDF;
+.btn-change-theme {
+  display: block;
+  width: 64px;
+  height: 32px;
+  background-color: #ffffff;
+  border: 2px solid black;
+  border-radius: 40px;
 }
 
-.circle-change-theme.change-theme {
+.circle-change-theme {
+  width: 23px; 
+  height: 23px; 
+  background-color: var(--tab);
+  border: 1px solid var(--tab);
+  border-radius: 50%;
+  transform: translateX(-3px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-change-theme.clicked .circle-change-theme {
+  transform: translateX(27px);
   background-color: #FFFFFF;
-} */
+  border: 1px solid #FFFFFF;
+}
+ 
+.btn-change-theme.clicked  {
+  border: 2px solid var(--color-accent);
+  background-color:var(--tab);
+}
+
+.mobile-menu-buttons .menu-toggle .btn-change-theme {
+  display: block;
+  width: 64px;
+  height: 32px;
+  border-radius: 40px;
+  background-color: var(--color-accent);
+  border: 1px solid #FFFFFF;
+}
+
+.mobile-menu-buttons .menu-toggle .btn-change-theme.clicked {
+  border: 2px solid var(--color-accent);
+  background-color:var(--tab);
+}
+ 
+@media (max-width: 1279px) {
+   .btn-change-theme {
+    display: none;
+  }
+}

@@ -85,14 +85,6 @@ a.mobile-menu-logo {
   align-items: center;
   gap: 18px;
 }
-.mobile-menu-buttons .menu-toggle .btn-change-theme {
-  display: block;
-  width: 64px;
-  height: 32px;
-  background-color: #6b7dc9;
-  border: 1px solid var(--white);
-  border-radius: 40px;
-}
 
 .head-menu-close-button {
   stroke: var(--white);
