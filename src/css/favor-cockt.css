@@ -1,17 +1,32 @@
 .favor-cockt {
   padding-top: 80px;
 }
+.trash__btn.svg__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .favor__list {
   padding-top: 40px;
   padding-bottom: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  justify-content: center;
 }
+
 .svg-icon {
   pointer-events: none;
+  stroke: var(--white);
   width: 48px;
   height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+svg.svg-icon-trash {
+  width: 24px;
+  height: 24px;
 }
 .favor__item {
   padding: 14px 14px 14px 20px;

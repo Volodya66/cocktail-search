@@ -1,6 +1,6 @@
 import './js/mobile-menu';
 import './js/theme-changer';
-import './js/user-screen-width-follower';
+// import './js/user-screen-width-follower';
 // import './js/render/render-coctails-cards';
 // import './js/modal/modal-cocktail';
 // import './js/modal/modal-ingredient';

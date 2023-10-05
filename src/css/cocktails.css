@@ -53,7 +53,8 @@
     rgba(126, 143, 221, 0.4) 0px 15px 12px;
 }
 /* dark mode style+++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-.cocktails.dark-mode li {
+.cocktails.dark-mode li,
+.favor__list.dark-mode li {
   background-color: var(--d-m-dark);
 }
 .cocktails__item :not(:last-child) {
@@ -137,7 +138,8 @@
   border-radius: 12px;
   background: #7e8fdd;
 }
-.svg-heart {
+.svg-heart,
+.svg-trash {
   width: 24px;
   height: 24px;
   pointer-events: none;
