@@ -15,3 +15,4 @@ import './js/element-pagination';
 import './js/init-search';
 // import './js/favor-cocktails-addListenerBtn';
 import './js/check-elem-in-loc-stor';
+import './js/loader';
