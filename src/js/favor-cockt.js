@@ -59,8 +59,6 @@ export function changeEvents(event) {
   // console.log('виклик changeEvents');
   if (target.classList.contains('learnmore__btn')) {
     modalCocktBtnFav.addEventListener('click', onModalCocktBtnFav);
-
-    console.log('Open modal');
   }
   if (!target.classList.contains('svg__btn')) {
     return;
@@ -74,14 +72,11 @@ export function changeEvents(event) {
 
     let favoriteListLocalStorage = getFavorites();
 
-    console.log(favoriteListLocalStorage.length);
-
     favoriteListLocalStorage = favoriteListLocalStorage.filter(
       favorite => favorite.id !== favoriteCardIdRemove
     );
 
     saveFavorites(favoriteListLocalStorage);
-    console.log(favoriteListLocalStorage.length);
     return;
   }
 

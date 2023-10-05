@@ -7,6 +7,12 @@ export function checkElemInLocStor(elementId, elementType) {
   } else if (elementType === 'modalCocktail') {
     const isFoundEl = getFavorites().find(e => e.id === elementId);
     return isFoundEl ? true : false;
+  } else if (elementType === 'favorIngred') {
+    const dataLocalFav = JSON.parse(localStorage.getItem('basket')) || [];
+    if (dataLocalFav) {
+      const isFoundEl = dataLocalFav.find(e => e.id === elementId);
+      return isFoundEl ? true : false;
+    }
   }
 }
 //       console.log(e.id);
