@@ -6,7 +6,7 @@ import { noResultFavorCocktails } from './render/render-element-not-found';
 import spriteUrl from '/img/sprite.svg';
 import axios from 'axios';
 const BASE_URL = 'https://drinkify.b.goit.study/api/v1';
-noResultFavorCocktails;
+import { selectedIngredient } from './modal/modal-ingredient';
 // import { addListenerToLearnMoreBtn } from './modal/modal-cocktail';
 // LOCAL STORAGE GET AND SAVE
 // let favorCock = getFavorites();
@@ -159,6 +159,10 @@ try {
       );
     }
     //?
+    const listCocktail = document.querySelector('.list-cocktail-ingredients');
+
+    listCocktail.addEventListener('click', selectedIngredient);
+
     modalContainer.addEventListener('click', onModalCocktBtnFav);
 
     // const modalCocktailElement = e.target.closest('.favor__item');
