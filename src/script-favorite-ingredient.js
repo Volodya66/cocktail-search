@@ -7,3 +7,4 @@ import './js/theme-changer';
 // import './js/render/render-modal-ingred';
 // import './js/element-pagination';
 import './js/favor-ingred';
+import './js/render/render-element-not-found';

@@ -4,6 +4,7 @@ import axios from 'axios';
 import * as basicLightbox from 'basiclightbox';
 // import '../css/favor-ingred.css';
 import { customPaginationElement } from './element-pagination-custom';
+import { noResultFavorIngred } from './render/render-element-not-found';
 const BASE_URL = 'https://drinkify.b.goit.study/api/v1/';
 const cardContainerEl = document.querySelector('.favor-ingred__gallery');
 
@@ -12,7 +13,51 @@ const data = JSON.parse(localStorage.getItem(KEY_BASKET));
 console.log(data);
 const paginationRef = document.querySelector('#pagination-elements');
 
-cardMarkupImg(data, cardContainerEl);
+function onIngredLearnMoreBtnClick(e) {
+  if (e.target.className !== 'card__close') {
+    return;
+  }
+
+  // const cocktailsList = document.querySelector('.js-modal-cocktails');
+  // const modalId = e.target.dataset.modalOpen;
+  // const modalCardId = e.target.dataset.id;
+  // const modal = document.getElementById(modalId);
+  // modal.classList.remove('is-hidden');
+  console.log('slkasdfg');
+}
+function onIngredTrashBtnClick(e) {
+  if (e.target.className !== 'btn-svg__close') {
+    return;
+  }
+  console.log('trash');
+  console.log(e.target);
+  const ingredDeleteCardId = e.target.getAttribute('data-ingred-trash-id');
+  console.log(ingredDeleteCardId);
+  let dataIngrLocStor = JSON.parse(localStorage.getItem(KEY_BASKET)) || [];
+  if (dataIngrLocStor === 0) {
+    noResultFavorIngred(cardContainerEl);
+  }
+  dataIngrLocStor = dataIngrLocStor.filter(
+    favorite => favorite.id !== ingredDeleteCardId
+  );
+  localStorage.setItem(KEY_BASKET, JSON.stringify(dataIngrLocStor));
+  const newDataIngr = JSON.parse(localStorage.getItem(KEY_BASKET)) || [];
+  if (newDataIngr.length === 0) {
+    noResultFavorIngred(cardContainerEl);
+    return;
+  }
+  cardMarkupImg(newDataIngr, cardContainerEl);
+}
+cardContainerEl.addEventListener('click', onIngredTrashBtnClick);
+
+cardContainerEl.addEventListener('click', onIngredLearnMoreBtnClick);
+
+if (data.length > 0) {
+  cardMarkupImg(data, cardContainerEl);
+} else {
+  noResultFavorIngred(cardContainerEl);
+}
+
 // Promise.all(
 //   data.map(async id => {
 //     const data = await fetchIngredient(id);
@@ -66,7 +111,7 @@ function cardMarkupImg(data, container) {
   const dataForRender = data
     .map(el => {
       return `
-          <li class="favor-ingred__card-item" id="${el._id}">
+          <li class="favor-ingred__card-item change-theme" id="${el.id}">
             <h2 class="favor-ingred__title-name">${el.name}</h2>
             <p class="favor-ingred__text-alco">${checkAlco(el.alcohol)}</p>
             <p class="favor-ingred__text-descr">${trimText(
@@ -80,8 +125,10 @@ function cardMarkupImg(data, container) {
         /['"]+/g,
         ''
       )}" type="button">learn more</button>
-              <button class="btn-svg__close" type="button">
-                <svg class="favor-ingred__svg" data-id="${el._id}">
+              <button class="btn-svg__close" data-ingred-trash-id = ${
+                el.id
+              } type="button">
+                <svg class="favor-ingred__svg" data-id="${el.id}">
                   <use href="./img/sprite.svg#icon-trash"></use>
                 </svg>
               </button>
@@ -90,7 +137,7 @@ function cardMarkupImg(data, container) {
                   `;
     })
     .join('');
-  container.insertAdjacentHTML('beforeend', dataForRender);
+  container.innerHTML = dataForRender;
 }
 
 // Promise.all(

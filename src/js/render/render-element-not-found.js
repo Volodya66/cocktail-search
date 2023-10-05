@@ -87,6 +87,24 @@ export function noResultFavorCocktails(container) {
 
 // const noResultCocktails = ;
 
+export function noResultFavorIngred(container) {
+  container.innerHTML = `<div class="no_result_container">
+      <div class="no_result">
+        <div class="no_result_center">
+          <img src="${noImg}"
+            class="no_result_img"
+            alt="no Ingredients"
+          />
+          <p class="no_result_text">
+            You haven't added any<br /><span class="no_result_fc"
+              >favorite ingredients</span
+            >
+            yet
+          </p>
+        </div>
+      </div>
+</div>`;
+}
 const noResultIngredients = `<div class="no_result_container">
       <div class="no_result">
         <h2 class="no_result_title">Favorite ingredients</h2>
