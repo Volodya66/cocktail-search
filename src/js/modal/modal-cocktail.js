@@ -9,7 +9,7 @@ const BASE_URL = 'https://drinkify.b.goit.study/api/v1';
 const modalCloseButtons = document.querySelectorAll('[data-modal-close]');
 const cocktailsList = document.querySelector('.cocktails__list');
 
-function addListenerToLearnMoreBtn(containerUlRef) {
+export function addListenerToLearnMoreBtn(containerUlRef) {
   function onCocktailCardItemBtnClick(e) {
     if (e.target.nodeName !== 'BUTTON' || !e.target.dataset.id) {
       return;
@@ -72,7 +72,7 @@ async function firstReqAPIModal(id) {
   }
 }
 
-function renderCocktailModal(images, container) {
+export function renderCocktailModal(images, container) {
   const ingredientsArr = [];
   const ingredientsId = [];
   images[0].ingredients.forEach(element => {

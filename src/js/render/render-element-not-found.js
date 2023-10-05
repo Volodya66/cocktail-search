@@ -2,13 +2,13 @@
 
 //вставка в сторінку "not founds"
 // <div class="noAll"></div>
-// import noImg from '../../img/rafiki_not.png';
+import noImg from '../../img/rafiki_not.png';
 
 const noAllEl = document.querySelector('.noAll');
 export function noResultAll(container) {
   container.innerHTML = `<div class="no_res_cent">
   <img
-    src="img/rafiki_not.png"
+    src="${noImg}"
     class="no_res_img"
     alt="no cocktails"
   />
@@ -33,7 +33,7 @@ export function noResultAll(container) {
 
 //2 різні картки "нема фаворит коктейлів і фаворит інгредієнтів"
 //<div class="no"></div>
-import noImg from '../../img/rafiki_not.png';
+// import noImg from '../../img/rafiki_not.png';
 
 const noResultContainerEl = document.querySelector('.no');
 export function noResultCocktails(container) {
@@ -65,24 +65,27 @@ function noresult() {
   }
 }
 
-// const noResultCocktails = `
-//     <div class="no_result_container">
-//       <div class="no_result">
-//         <h2 class="no_result_title">Favorite cocktails</h2>
-//         <div class="no_result_center">
-//           <img src="${noImg}"
-//             class="no_result_img"
-//             alt="no cocktails"
-//           />
-//           <p class="no_result_text">
-//             You haven't added any<br /><span class="no_result_fc"
-//               >favorite cocktails</span
-//             >
-//             yet
-//           </p>
-//         </div>
-//       </div>
-// </div>`;
+export function noResultFavorCocktails(container) {
+  container.innerHTML = `
+    <div class="no_result_container change-theme">
+      <div class="no_result">
+        <div class="no_result_center">
+          <img src="${noImg}"
+            class="no_result_img"
+            alt="no cocktails"
+          />
+          <p class="no_result_text">
+            You haven't added any<br /><span class="no_result_fc"
+              >favorite cocktails</span
+            >
+            yet
+          </p>
+        </div>
+      </div>
+</div>`;
+}
+
+// const noResultCocktails = ;
 
 const noResultIngredients = `<div class="no_result_container">
       <div class="no_result">

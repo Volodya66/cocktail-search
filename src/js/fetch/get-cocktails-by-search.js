@@ -14,6 +14,8 @@ export default function getCocktailsBySearch(search) {
       return response.json();
     })
     .catch(() => {
+      const cocktailsTitle = document.querySelector('.search__title');
+      cocktailsTitle.classList.add('visually-hidden');
       noResultAll(cocktailsList);
     });
 }
