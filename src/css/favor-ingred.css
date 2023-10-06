@@ -207,7 +207,7 @@ body.dark-mode .favor-ingred__title {
   overflow: hidden;
   color: var(--l-m-dark);
   text-overflow: ellipsis;
-  whitespace: nowrap;
+  /* white-space: nowrap; */
   font-family: Poppins;
   line-height: 1.28;
 

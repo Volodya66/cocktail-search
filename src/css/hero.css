@@ -105,7 +105,7 @@
     margin-left: auto;
     margin-right: auto;
     height: 481px;
-    width: 342;
+    width: 342px;
     margin-bottom: 33px;
   }
 
@@ -138,7 +138,7 @@
   .hero-right-about {
     position: absolute;
     width: 173px;
-    color: var(l-m-dark);
+    color: var(--l-m-dark);
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -184,7 +184,7 @@
   }
   .hero-right {
     position: relative;
-    margin-right: -54x;
+    margin-right: -54px;
     margin-left: -42px;
     width: 427px;
     height: 593px;
