@@ -46,9 +46,15 @@ try {
   const dataFavorCockt = getFavorites();
 
   if (dataFavorCockt.length > 0) {
+    if (dataFavorCockt.length < 4) {
+      // const bodyRef = document.querySelector('body');
+      // bodyRef.classList.add('small-body');
+    }
     renderFavorCocktailsList(dataFavorCockt);
     // favorList.addEventListener('click', changeFavorEvents);
   } else {
+    // const bodyRef = document.querySelector('body');
+    // bodyRef.classList.toggle('small-body');
     noResultFavorCocktails(favorList);
   }
   function renderFavorCocktailsList(arrayFavorCockt) {
@@ -199,12 +205,30 @@ try {
         saveFavorites(favoriteListLocalStorage);
         modalCocktBtnFav.textContent = 'Add to favorite';
         if (favoriteListLocalStorage.length === 0) {
+          // const bodyRef = document.querySelector('body');
+          // bodyRef.classList.add('small-body');
           noResultFavorCocktails(favorList);
           return;
         }
+        // if (favoriteListLocalStorage.length < 4) {
+        //   const bodyRef = document.querySelector('body');
+        //   bodyRef.classList.add('small-body');
+        // }
+        // if (favoriteListLocalStorage.length > 4) {
+        //   const bodyRef = document.querySelector('body');
+        //   bodyRef.classList.remove('small-body');
+        // }
         renderFavorCocktailsList(favoriteListLocalStorage);
         return;
       } else {
+        // if (favoriteListLocalStorage.length < 4) {
+        //   const bodyRef = document.querySelector('body');
+        //   bodyRef.classList.add('small-body');
+        // }
+        // if (favoriteListLocalStorage.length > 4) {
+        //   const bodyRef = document.querySelector('body');
+        //   bodyRef.classList.remove('small-body');
+        // }
         modalCocktBtnFav.textContent = 'Add to favorite';
         let favoriteListLocalStorage = getFavorites();
 
