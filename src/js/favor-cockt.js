@@ -198,7 +198,6 @@ try {
         );
         saveFavorites(favoriteListLocalStorage);
         modalCocktBtnFav.textContent = 'Add to favorite';
-        console.log(favoriteListLocalStorage);
         if (favoriteListLocalStorage.length === 0) {
           noResultFavorCocktails(favorList);
           return;
@@ -262,9 +261,7 @@ try {
   //   el.addEventListener('click', onTrashBtnClick);
   // });
   favorList.addEventListener('click', onBtnLoadMoreClick);
-} catch {
-  console.log('index.html');
-}
+} catch {}
 
 function changeFavorEvents(event) {
   const target = event.target;

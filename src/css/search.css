@@ -1,7 +1,9 @@
 .search {
   padding-top: 100px;
 }
-
+.buton-letters.active {
+  background-color: var(--tab);
+}
 .search-input-container {
   position: relative;
   width: 334px;
@@ -60,7 +62,7 @@
 }
 
 .buton-letters:hover,
-.buton-letters.active {
+.buton-letters:active {
   background-color: var(--tab);
 }
 

@@ -199,6 +199,7 @@ a.dropbtn {
 .icon-chevron-down {
   /* fill: #7e8fdd; */
   stroke: var(--white);
+  pointer-events: none;
 }
 
 .rotate {

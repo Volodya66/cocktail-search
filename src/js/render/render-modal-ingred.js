@@ -6,7 +6,8 @@ export function markupModalIngredients(objParam) {
       country = country || 'There is no country of origin';
       flavour = flavour || 'Not specified';
       return `
-           <button class="close-modal-cocktails js-close-btn" data-modal-close-ingr>
+      
+           <button class="close-modal-cocktails js-close-btn" data-modal-close-ingr >
         <svg class="svg-close-modal-cocktails" width="22" height="22">
           <use href="${spriteUrl}#icon-close"></use>
         </svg>

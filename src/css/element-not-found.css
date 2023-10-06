@@ -24,6 +24,9 @@
   font-style: normal;
   font-weight: 400;
 }
+.cocktails.dark-mode .no_res_text {
+  color: var(--white);
+}
 .no_res_fc {
   font-family: Poppins;
   color: var(--tab);
@@ -108,6 +111,9 @@
   text-align: center;
   font-style: normal;
   font-weight: 400;
+}
+.favor-ingred__gallery.dark-mode .no_result_text {
+  color: var(--white);
 }
 .favor__list.dark-mode .no_result_text {
   color: var(--white);

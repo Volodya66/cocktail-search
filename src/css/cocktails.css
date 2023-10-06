@@ -129,6 +129,7 @@
   background-color: var(--color-accent);
   color: var(--white);
 }
+
 .svg__btn {
   display: block;
   width: 48px;

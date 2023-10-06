@@ -8,6 +8,31 @@
   padding-top: 80px;
   margin-bottom: 40px;
 }
+.favor-ingred {
+  padding-bottom: 40px;
+}
+.card__close {
+  border: 1px solid #7e8fdd;
+  color: inherit;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.28px;
+  text-transform: uppercase;
+  background-color: transparent;
+  transition: background-color var(--t-dur) var(--t-tf),
+    color var(--t-dur) var(--t-tf);
+}
+.card__close:hover {
+  background-color: var(--color-accent);
+  color: var(--white);
+}
+
+.favor-ingred__gallery.dark-mode .card__close {
+  color: var(--white);
+}
 .modal-ingredients {
   overflow-y: scroll;
   border-radius: 15px;
@@ -22,6 +47,12 @@
 .modal-ingredients.dark-mode {
   background-color: var(--white);
   color: var(--l-m-dark);
+}
+.favor-ingred__card-item {
+  transition: all var(--t-dur) var(--t-tf);
+}
+.favor-ingred__card-item:hover {
+  box-shadow: #7e8fdd80 0px 19px 38px, #7e8fdd66 0px 15px 12px;
 }
 .favor-ingred__gallery.dark-mode .favor-ingred__card-item {
   background-color: var(--d-m-dark);
@@ -60,7 +91,24 @@ body.dark-mode .favor-ingred__title {
 .favor-ingred__title.dark-mode {
   color: var(--white);
 }
+.modal-cocktails.dark-mode .modal-ingredient-title {
+  color: var(--white);
+}
+.modal-cocktails.dark-mode .modal-ingredient-type {
+  color: var(--white);
+  opacity: 0.5;
+}
+.modal-cocktails.dark-mode .modal-ingredient-text {
+  color: rgba(253, 253, 255, 0.5);
+}
+.modal-cocktails.dark-mode .modal-ingredient-span-black {
+  color: var(--white);
+}
 
+.modal-cocktails.dark-mode .modal-ingredient-list-item {
+  color: var(--white);
+  opacity: 0.8;
+}
 @media screen and (min-width: 768px) {
   .favor-ingred__title {
     font-size: 40px;

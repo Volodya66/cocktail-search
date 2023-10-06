@@ -29,7 +29,7 @@ export function paginationElement(
     );
     arrayOfArrays.push(perPageArray);
   }
-  console.log('Малюємо першу сторінку');
+  // console.log('Малюємо першу сторінку');
   renderCocktailsList(arrayOfArrays[0], cocktailsContainerRef);
   renderPaginationNumbers(
     arrayOfArrays,
@@ -46,7 +46,7 @@ function onPaginationBtnClick(e) {
     cocktailsContainerRef
   );
 
-  console.log(`Малюємо ${e.target.textContent} сторінку`);
+  // console.log(`Малюємо ${e.target.textContent} сторінку`);
   // console.log(arrayOfArrays[e.target.textContent - 1]);
 }
 function renderPaginationNumbers(arrayOfArrays, paginationRef, cocktailsRef) {

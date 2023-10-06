@@ -16,13 +16,14 @@ lettersContainer.addEventListener('change', onSelectChange);
 searchForm.addEventListener('submit', onChangeInput);
 async function isPaginationRequired(data) {
   if (!data) {
+    paginationRef.innerHTML = '';
     return;
   }
   if (data.length > screenWidth) {
     // array, containerPagination, containerCoctails
     cocktailsTitle.innerHTML = 'Searching results';
     paginationRef.classList.remove('visually-hidden');
-    console.log('Викликаємо пагінатор');
+    // console.log('Викликаємо пагінатор');
     paginationElement(data, paginationRef, cocktailsList);
   } else if (data.length <= screenWidth) {
     paginationRef.classList.add('visually-hidden');
@@ -48,15 +49,22 @@ async function onChangeInput(event) {
   //   }
   // }
 }
-
+let letterActiveBtn = [];
 async function onButtonClick(event) {
   if (event.target.tagName === 'BUTTON') {
     const data = await getCocktailsBySearch(`f=${event.target.innerText}`);
-    // console.log(data);
+    if (letterActiveBtn.length === 0) {
+      letterActiveBtn.push(event.target);
+      letterActiveBtn[0].classList.toggle('active');
+    } else {
+      letterActiveBtn[0].classList.toggle('active');
+      letterActiveBtn = [];
+      letterActiveBtn.push(event.target);
+      letterActiveBtn[0].classList.toggle('active');
+    }
     isPaginationRequired(data);
   }
 }
-
 async function onSelectChange(event) {
   if (event.target.tagName === 'SELECT') {
     const data = await getCocktailsBySearch(`f=${event.target.value}`);
