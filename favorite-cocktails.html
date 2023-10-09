@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/cocktail-search/assets/favicon-3465b94d.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drinkify</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    />
+    
+    <script type="module" crossorigin src="/cocktail-search/assets/favor-cockt-84ec8be7.js"></script>
+    <link rel="stylesheet" href="/cocktail-search/assets/favorite-cocktails-2551fff9.css">
+  </head>
+  <body class="change-theme">
+    <header class="header">
+  <div class="container header-container">
+    <nav>
+      <ul class="desktop-menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="favorite">
+          <a
+            >Favorite
+            <svg class="chevron-down">
+              <use href="/cocktail-search/assets/sprite-4a79d548.svg#icon-chevron-down"></use>
+            </svg>
+          </a>
+          <ul class="submenu">
+            <li><a href="favorite-cocktails.html">Favorite Cocktails</a></li>
+            <li>
+              <a href="favorite-ingredients.html">Favorite Ingredients</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <!--logo-->
+    <div class="logo">
+      <a class="logo-link" href="index.html">
+        <span class="logo-name change-theme">Drinkify</span>
+        <svg class="logo-icon">
+          <use href="/cocktail-search/assets/sprite-4a79d548.svg#icon-cocktail"></use>
+        </svg>
+      </a>
+    </div>
+
+    <div class="menu-toggle">
+      <button class="btn-change-theme js-btn-change-theme" type="button">
+        <span class="circle-change-theme change-theme"></span>
+      </button>
+    </div>
+
+    <button class="menu-button" data-modal-open>
+      <svg class="menu-burger change-theme" width="40" height="40">
+        <use href="/cocktail-search/assets/sprite-4a79d548.svg#icon-burger"></use>
+      </svg>
+    </button>
+    <!-- розмітка -->
+
+<div class="backdrop-header container is-hidden" data-modal>
+  <div class="container">
+    <div class="head-mobile-div">
+      <div class="bbb">
+        <a class="mobile-menu-logo" href="index.html"
+          >DRINKIFY<svg class="mobile-menu-icon">
+            <use href="/cocktail-search/assets/sprite-4a79d548.svg#icon-cocktail"></use>
+          </svg>
+        </a>
+      </div>
+
+      <div class="mobile-menu-buttons">
+        <div class="menu-toggle">
+          <button
+            class="btn-change-theme js-btn-change-theme"
+            id="js-btn-change-theme"
+            type="button"
+          >
+            <span class="circle-change-theme change-theme"></span>
+          </button>
+        </div>
+
+        <button data-modal-close class="head-menu-close" type="button">
+          <svg class="head-menu-close-button">
+            <use href="/cocktail-search/assets/sprite-4a79d548.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="header-mobile-menu">
+      <div class="head-menu-list">
+        <a class="head-menu-item" href="./index.html">Home</a>
+      </div>
+
+      <div class="dropdown">
+        <div class="dropbtn-div">
+          <a class="dropbtn dropdown-trigger"
+            >Favorite<svg class="icon-chevron-down" width="24" height="24">
+              <use href="/cocktail-search/assets/sprite-4a79d548.svg#icon-chevron-down"></use></svg
+          ></a>
+        </div>
+        <!-- <button class="dropbtn dropdown-trigger">Favorite</button> -->
+        <div class="dropdown-content" id="myDropdown">
+          <div class="dropdown-menu-links">
+            <a href="favorite-cocktails.html">Favorite cocktails</a>
+            <a href="favorite-ingredients.html">Favorite ingredients</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <svg class="icon-star" width="391" height="391">
+        <use href="/cocktail-search/assets/sprite-4a79d548.svg#icon-7"></use>
+      </svg>
+    </div>
+  </div>
+</div>
+
+  </div>
+</header>
+
+    <section class="favor-cockt">
+  <div class="container">
+    <h1 class="favor-coctails__title">Favorite cocktails</h1>
+    <ul class="favor__list change-theme"></ul>
+  </div>
+</section>
+
+    <footer class="footer">
+  <div class="container container-footer">
+    <div class="footer-logo-container">
+      <a class="footer-link" href="index.html">
+        <span class="footer-logo">Drinkify</span>
+        <svg class="footer-icon">
+          <use href="/cocktail-search/assets/sprite-4a79d548.svg#icon-cocktail"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="footer-socail-container">
+      <p class="footer-text">We in social</p>
+      <ul class="footer-list">
+        <li>
+          <a href="https://www.facebook.com/goITclub/" target="_blank">
+            <svg class="footer-social-icon">
+              <use href="/cocktail-search/assets/sprite-4a79d548.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/goitclub/" target="_blank">
+            <svg class="footer-social-icon">
+              <use href="/cocktail-search/assets/sprite-4a79d548.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/c/GoIT" target="_blank">
+            <svg class="footer-social-icon">
+              <use href="/cocktail-search/assets/sprite-4a79d548.svg#icon-youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <section
+  class="modal-cocktails change-theme is-hidden"
+  data-modal
+  id="modal-cocktails"
+>
+  <div class="wrapper-modal-cocktails">
+    <button class="close-modal-cocktails cocktails-close" data-modal-close>
+      <svg class="svg-close-modal-cocktails" width="22" height="22">
+        <use href="/cocktail-search/assets/sprite-4a79d548.svg#icon-close"></use>
+      </svg>
+    </button>
+    <ul class="js-modal-cocktails list"></ul>
+    <div class="js-modal-cocktails js-modal-cocktails-div"></div>
+    <div class="modal-cocktails-card-buttons">
+      <ul class="modal-cocktails-buttons list">
+        <li class="modal-cocktails-buttons-item">
+          <button type="button" class="modal-button modal-button-favorite">
+            ADD TO FAVORITE
+          </button>
+        </li>
+        <li class="modal-cocktails-buttons-item">
+          <button
+            type="button"
+            class="modal-button modal-button-back"
+            data-modal-close
+          >
+            BACK
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+    <div class="is-hidden modal-ingredients change-theme" data-modal>
+  <div class="modal-ingredient-details"></div>
+</div>
+
+    
+  </body>
+</html>
